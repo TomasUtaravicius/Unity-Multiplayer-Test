@@ -255,7 +255,18 @@ namespace Unity.BossRoom.Gameplay.UserInput
                 if ((Time.time - m_LastSentMove) > k_MoveSendRateSeconds)
                 {
                     m_LastSentMove = Time.time;
-                    m_ServerCharacter.SendCharacterMovementInputServerRpc(m_MovementInput);
+
+
+                    Vector3 cameraForward = Camera.main.transform.forward;
+                    Vector3 cameraRight = Camera.main.transform.right;
+                    cameraForward.y = 0f;
+                    cameraRight.y = 0f;
+                    cameraForward.Normalize();
+                    cameraRight.Normalize();
+
+                    Vector3 moveDirection = cameraForward * m_MovementInput.z + cameraRight * m_MovementInput.x;
+
+                    m_ServerCharacter.SendCharacterMovementInputServerRpc(moveDirection);
                 }
             }
 
