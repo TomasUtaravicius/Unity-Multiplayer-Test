@@ -15,6 +15,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         PathFollowing = 1,
         Charging = 2,
         Knockback = 3,
+        Interact = 4,
     }
 
     /// <summary>
@@ -32,11 +33,14 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         [SerializeField]
         Rigidbody m_Rigidbody;
 
+        [SerializeField]
+        Animator m_Animator;
+
         private NavigationSystem m_NavigationSystem;
 
         private DynamicNavPath m_NavPath;
 
-        private MovementState m_MovementState;
+        public MovementState m_MovementState;
 
         MovementStatus m_PreviousState;
 
@@ -94,11 +98,13 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                 return;
             }
 #endif
+            Debug.Log("Setting Movement state to PathFollowing");
             m_MovementState = MovementState.PathFollowing;
             m_NavPath.SetTargetPosition(position);
         }
         public void SetMovementInput(Vector3 movement)
         {
+            Debug.Log("Setting Movement state to PathFollowing");
             m_MovementState = MovementState.PathFollowing;
             m_movementInput = movement;
         }
@@ -106,14 +112,22 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         public void StartForwardCharge(float speed, float duration)
         {
             m_NavPath.Clear();
+            Debug.Log("Setting Movement state to Charging");
             m_MovementState = MovementState.Charging;
             m_ForcedSpeed = speed;
             m_SpecialModeDurationRemaining = duration;
+        }
+        public void StartInteraction()
+        {
+            Debug.Log("Setting Movement state to Interacting");
+            m_MovementState = MovementState.Interact;
+            m_Animator.SetBool("IsInteracting", true);
         }
 
         public void StartKnockback(Vector3 knocker, float speed, float duration)
         {
             m_NavPath.Clear();
+            Debug.Log("Setting Movement state to Knockback");
             m_MovementState = MovementState.Knockback;
             m_KnockbackVector = transform.position - knocker;
             m_ForcedSpeed = speed;
@@ -126,6 +140,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         /// <param name="followTransform">The transform to follow</param>
         public void FollowTransform(Transform followTransform)
         {
+            Debug.Log("Setting Movement state to PathFollowing");
             m_MovementState = MovementState.PathFollowing;
             m_NavPath.FollowTransform(followTransform);
         }
@@ -154,6 +169,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         public void CancelMove()
         {
             m_NavPath?.Clear();
+            Debug.Log("Setting Movement state to Idle");
             m_MovementState = MovementState.Idle;
         }
 
@@ -204,13 +220,21 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                 m_NavMeshAgent.enabled = false;
             }
         }
-
+        public void PerformInteractiveMovement(Vector3 movementVector)
+        {
+            m_CharacterController.Move(movementVector);
+        }
         private void PerformMovement()
         {
             if (m_MovementState == MovementState.Idle)
                 return;
 
             Vector3 movementVector;
+            if(m_MovementState == MovementState.Interact)
+            {
+                return;
+            }
+
 
             if (m_MovementState == MovementState.Charging)
             {
@@ -282,7 +306,6 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             // Move the character using Character Controller
             m_CharacterController.Move(movementVector);
             transform.rotation = Quaternion.LookRotation(movementVector);
-
             // After moving adjust the position of the dynamic rigidbody.
             m_Rigidbody.position = transform.position;
             m_Rigidbody.rotation = transform.rotation;

@@ -209,6 +209,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
         {
             ActionInputEvent?.Invoke(action);
             m_ServerCharacter.RecvDoActionServerRPC(action);
+            Debug.Log("Action Input send in client input sender");
         }
         
         void FixedUpdate()
@@ -318,7 +319,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
         void PerformSkill(ActionID actionID, SkillTriggerStyle triggerStyle, ulong targetId = 0)
         {
             Transform hitTransform = null;
-
+            Debug.Log("Skill perform");
             if (targetId != 0)
             {
                 // if a targetId is given, try to find the object
@@ -355,7 +356,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
             {
                 //Don't trigger our move logic for a while. This protects us from moving just because we clicked on them to target them.
                 m_LastSentMove = Time.time + k_TargetMoveTimeout;
-
+                Debug.Log("Skill perform 2");
                 SendInput(playerAction);
             }
             else if (!GameDataSource.Instance.GetActionPrototypeByID(actionID).IsGeneralTargetAction)
@@ -366,7 +367,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
 
                 var data = new ActionRequestData();
                 PopulateSkillRequest(k_CachedHit[0].point, actionID, ref data);
-
+                Debug.Log("Skill perform 3");
                 SendInput(data);
             }
         }

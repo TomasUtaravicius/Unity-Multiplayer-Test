@@ -183,11 +183,14 @@ namespace Unity.BossRoom.Gameplay.Actions
                     return;              // ... so it's important not to try to do anything more here
                 }
 
+                //Debug.Log("Action started");
+                //m_Movement.StartInteraction();
                 int index = SynthesizeTargetIfNecessary(0);
                 SynthesizeChaseIfNecessary(index);
 
                 m_Queue[0].TimeStarted = Time.time;
                 bool play = m_Queue[0].OnStart(m_ServerCharacter);
+
                 if (!play)
                 {
                     //actions that exited out in the "Start" method will not have their End method called, by design.

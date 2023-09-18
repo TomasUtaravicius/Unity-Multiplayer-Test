@@ -241,9 +241,11 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             {
                 // notify running actions that we're using a new attack. (e.g. so Stealth can cancel itself)
                 ActionPlayer.OnGameplayActivity(Action.GameplayActivity.UsingAttackAction);
+                
             }
 
             PlayAction(ref data1);
+            m_Movement.StartInteraction();
         }
 
         // UTILITY AND SPECIAL-PURPOSE RPCs

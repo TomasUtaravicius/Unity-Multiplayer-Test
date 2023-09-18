@@ -16,6 +16,8 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
     {
         [SerializeField]
         Animator m_ClientVisualsAnimator;
+        [SerializeField]
+        ServerCharacterMovement m_ServerCharacterMovement; 
 
         [SerializeField]
         VisualizationConfiguration m_VisualizationConfiguration;
@@ -65,6 +67,8 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
 
         float m_CurrentSpeed;
 
+        public bool isInteracting;
+
         /// <summary>
         /// /// Server to Client RPC that broadcasts this action play to all clients.
         /// </summary>
@@ -107,6 +111,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         void Awake()
         {
             enabled = false;
+            isInteracting = false;
         }
 
         public override void OnNetworkSpawn()
@@ -281,7 +286,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                 // set Animator variables here
                 OurAnimator.SetFloat(m_VisualizationConfiguration.SpeedVariableID, m_CurrentSpeed);
             }
-
+            isInteracting = m_ClientVisualsAnimator.GetBool("IsInteracting");
             m_ClientActionViz.OnUpdate();
         }
 
@@ -292,6 +297,29 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             //example of where this is configured.
 
             m_ClientActionViz.OnAnimEvent(id);
+        }
+        private void OnAnimatorMove()
+        {
+            /*if (playerManager.isInteracting == false)
+            {
+                return;
+            }
+
+            
+            float delta = Time.deltaTime;
+            playerLocomotion.rigidbody.drag = 0f;
+            Vector3 deltaPosition = anim.deltaPosition;
+
+            deltaPosition.y = 0;
+
+            Vector3 velocity = deltaPosition / delta;
+            playerLocomotion.rigidbody.velocity = velocity;*/
+            if(isInteracting)
+            {
+                m_ServerCharacterMovement.PerformInteractiveMovement(m_ClientVisualsAnimator.deltaPosition);
+            }
+            //Debug.Log("OnAnimatorMove: " + m_ClientVisualsAnimator.deltaPosition);
+
         }
 
         public bool IsAnimating()
