@@ -104,7 +104,8 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         }
         public void SetMovementInput(Vector3 movement)
         {
-            Debug.Log("Setting Movement state to PathFollowing");
+            if (m_Animator.GetBool("IsInteracting"))
+                return;
             m_MovementState = MovementState.PathFollowing;
             m_movementInput = movement;
         }
@@ -120,6 +121,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         public void StartInteraction()
         {
             Debug.Log("Setting Movement state to Interacting");
+           
             m_MovementState = MovementState.Interact;
             m_Animator.SetBool("IsInteracting", true);
         }
@@ -223,6 +225,8 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         public void PerformInteractiveMovement(Vector3 movementVector)
         {
             m_CharacterController.Move(movementVector);
+            m_Rigidbody.position = transform.position;
+            m_Rigidbody.rotation = transform.rotation;
         }
         private void PerformMovement()
         {
