@@ -233,12 +233,11 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             if (m_MovementState == MovementState.Idle)
                 return;
 
-            Vector3 movementVector;
-            if(m_MovementState == MovementState.Interact)
-            {
+            if (m_MovementState == MovementState.Interact)
                 return;
-            }
 
+            Vector3 movementVector;
+            
 
             if (m_MovementState == MovementState.Charging)
             {

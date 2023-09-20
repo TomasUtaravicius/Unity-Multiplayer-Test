@@ -114,7 +114,6 @@ namespace Unity.BossRoom.Gameplay.Actions
         public void PlayAction(ref ActionRequestData data)
         {
             var anticipatedActionIndex = FindAction(data.ActionID, true);
-
             var actionFX = anticipatedActionIndex >= 0 ? m_PlayingActions[anticipatedActionIndex] : ActionFactory.CreateActionFromData(ref data);
             if (actionFX.OnStartClient(ClientCharacter))
             {

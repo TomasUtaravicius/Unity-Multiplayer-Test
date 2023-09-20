@@ -319,7 +319,6 @@ namespace Unity.BossRoom.Gameplay.UserInput
         void PerformSkill(ActionID actionID, SkillTriggerStyle triggerStyle, ulong targetId = 0)
         {
             Transform hitTransform = null;
-            Debug.Log("Skill perform");
             if (targetId != 0)
             {
                 // if a targetId is given, try to find the object
@@ -366,7 +365,10 @@ namespace Unity.BossRoom.Gameplay.UserInput
                 // in the desired direction. For others, like mage's bolts, this will fire a "miss" projectile at the spot clicked on.)
 
                 var data = new ActionRequestData();
-                PopulateSkillRequest(k_CachedHit[0].point, actionID, ref data);
+                GameObject targetGO = GameObject.FindGameObjectWithTag("CameraTarget");
+                //Vector3 characterDirection = this.transform.InverseTransformDirection(Camera.main.transform.forward);
+                PopulateSkillRequest(targetGO.transform.position, actionID, ref data);
+                //PopulateSkillRequest(k_CachedHit[0].point, actionID, ref data);
                 Debug.Log("Skill perform 3");
                 SendInput(data);
             }

@@ -45,6 +45,7 @@ namespace Unity.BossRoom.Gameplay.Actions
         /// </summary>
         public void PlayAction(ref ActionRequestData action)
         {
+            Debug.Log("Play Action " + action.Direction);
             if (!action.ShouldQueue && m_Queue.Count > 0 &&
                 (m_Queue[0].Config.ActionInterruptible ||
                     m_Queue[0].Config.CanBeInterruptedBy(action.ActionID)))
