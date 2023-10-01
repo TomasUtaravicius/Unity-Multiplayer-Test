@@ -28,6 +28,9 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         NavMeshAgent m_NavMeshAgent;
 
         [SerializeField]
+        bool isNPC = true;
+
+        [SerializeField]
         CharacterController m_CharacterController;
 
         [SerializeField]
@@ -266,21 +269,38 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             }
             else
             {
-                movementVector = new Vector3(m_movementInput.x, 0.0f, m_movementInput.z);
-                // Normalize the movement direction to ensure consistent speed in all directions
-                movementVector *= GetBaseMovementSpeed() * Time.fixedDeltaTime;
-
-                if (movementVector.magnitude > 1.0f)
+                if(!isNPC)
                 {
-                    movementVector.Normalize();
-                }
+                    movementVector = new Vector3(m_movementInput.x, 0.0f, m_movementInput.z);
+                    // Normalize the movement direction to ensure consistent speed in all directions
+                    movementVector *= GetBaseMovementSpeed() * Time.fixedDeltaTime;
 
-                // If we didn't move stop moving.
-                if (movementVector == Vector3.zero)
-                {
-                    m_MovementState = MovementState.Idle;
-                    return;
+                    if (movementVector.magnitude > 1.0f)
+                    {
+                        movementVector.Normalize();
+                    }
+
+                    // If we didn't move stop moving.
+                    if (movementVector == Vector3.zero)
+                    {
+                        m_MovementState = MovementState.Idle;
+                        return;
+                    }
                 }
+                else
+                {
+                    var desiredMovementAmount = GetBaseMovementSpeed() * Time.fixedDeltaTime;
+                    movementVector = m_NavPath.MoveAlongPath(desiredMovementAmount);
+
+                    // If we didn't move stop moving.
+                    if (movementVector == Vector3.zero)
+                    {
+                        m_MovementState = MovementState.Idle;
+                        return;
+                    }
+
+                }
+                
             }
             /*
             else
