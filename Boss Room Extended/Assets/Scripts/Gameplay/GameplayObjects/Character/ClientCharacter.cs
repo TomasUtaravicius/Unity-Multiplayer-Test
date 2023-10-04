@@ -300,26 +300,11 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         }
         private void OnAnimatorMove()
         {
-            /*if (playerManager.isInteracting == false)
-            {
-                return;
-            }
 
-            
-            float delta = Time.deltaTime;
-            playerLocomotion.rigidbody.drag = 0f;
-            Vector3 deltaPosition = anim.deltaPosition;
-
-            deltaPosition.y = 0;
-
-            Vector3 velocity = deltaPosition / delta;
-            playerLocomotion.rigidbody.velocity = velocity;*/
             if(isInteracting)
             {
                 m_ServerCharacterMovement.PerformInteractiveMovement(m_ClientVisualsAnimator.deltaPosition);
             }
-            //Debug.Log("OnAnimatorMove: " + m_ClientVisualsAnimator.deltaPosition);
-
         }
 
         public bool IsAnimating()

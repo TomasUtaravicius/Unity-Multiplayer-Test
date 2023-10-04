@@ -28,6 +28,9 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         NavMeshAgent m_NavMeshAgent;
 
         [SerializeField]
+        bool isNPC = true;
+
+        [SerializeField]
         CharacterController m_CharacterController;
 
         [SerializeField]
@@ -104,7 +107,8 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         }
         public void SetMovementInput(Vector3 movement)
         {
-            Debug.Log("Setting Movement state to PathFollowing");
+            if (m_Animator.GetBool("IsInteracting"))
+                return;
             m_MovementState = MovementState.PathFollowing;
             m_movementInput = movement;
         }
@@ -120,6 +124,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         public void StartInteraction()
         {
             Debug.Log("Setting Movement state to Interacting");
+           
             m_MovementState = MovementState.Interact;
             m_Animator.SetBool("IsInteracting", true);
         }
@@ -223,18 +228,19 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         public void PerformInteractiveMovement(Vector3 movementVector)
         {
             m_CharacterController.Move(movementVector);
+            m_Rigidbody.position = transform.position;
+            m_Rigidbody.rotation = transform.rotation;
         }
         private void PerformMovement()
         {
             if (m_MovementState == MovementState.Idle)
                 return;
 
-            Vector3 movementVector;
-            if(m_MovementState == MovementState.Interact)
-            {
+            if (m_MovementState == MovementState.Interact)
                 return;
-            }
 
+            Vector3 movementVector;
+            
 
             if (m_MovementState == MovementState.Charging)
             {
@@ -263,21 +269,38 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             }
             else
             {
-                movementVector = new Vector3(m_movementInput.x, 0.0f, m_movementInput.z);
-                // Normalize the movement direction to ensure consistent speed in all directions
-                movementVector *= GetBaseMovementSpeed() * Time.fixedDeltaTime;
-
-                if (movementVector.magnitude > 1.0f)
+                if(!isNPC)
                 {
-                    movementVector.Normalize();
-                }
+                    movementVector = new Vector3(m_movementInput.x, 0.0f, m_movementInput.z);
+                    // Normalize the movement direction to ensure consistent speed in all directions
+                    movementVector *= GetBaseMovementSpeed() * Time.fixedDeltaTime;
 
-                // If we didn't move stop moving.
-                if (movementVector == Vector3.zero)
-                {
-                    m_MovementState = MovementState.Idle;
-                    return;
+                    if (movementVector.magnitude > 1.0f)
+                    {
+                        movementVector.Normalize();
+                    }
+
+                    // If we didn't move stop moving.
+                    if (movementVector == Vector3.zero)
+                    {
+                        m_MovementState = MovementState.Idle;
+                        return;
+                    }
                 }
+                else
+                {
+                    var desiredMovementAmount = GetBaseMovementSpeed() * Time.fixedDeltaTime;
+                    movementVector = m_NavPath.MoveAlongPath(desiredMovementAmount);
+
+                    // If we didn't move stop moving.
+                    if (movementVector == Vector3.zero)
+                    {
+                        m_MovementState = MovementState.Idle;
+                        return;
+                    }
+
+                }
+                
             }
             /*
             else

@@ -376,6 +376,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1829276847453002016}
     - target: {fileID: 4309865414312164521, guid: 0d2d836e2e83b754fa1a1c4022d6d65d, type: 3}
+      propertyPath: m_NavMeshAgent
+      value: 
+      objectReference: {fileID: 7415242845889366003}
+    - target: {fileID: 4309865414312164521, guid: 0d2d836e2e83b754fa1a1c4022d6d65d, type: 3}
       propertyPath: m_CharacterController
       value: 
       objectReference: {fileID: 2820419930525828514}
@@ -472,8 +476,8 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 4462343263575301329, guid: 0d2d836e2e83b754fa1a1c4022d6d65d, type: 3}
-    - {fileID: -6618539813679097072, guid: 0d2d836e2e83b754fa1a1c4022d6d65d, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4600110157238723791, guid: 0d2d836e2e83b754fa1a1c4022d6d65d, type: 3}
@@ -677,7 +681,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!4 &6009713983291384766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4600110157238723791, guid: 0d2d836e2e83b754fa1a1c4022d6d65d, type: 3}
@@ -716,6 +720,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe9bfd21e47445488dfd84b4e0c9884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &7415242845889366003 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 745390554272530562, guid: 0d2d836e2e83b754fa1a1c4022d6d65d, type: 3}
+  m_PrefabInstance: {fileID: 7831782662127126385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7751377510591478590 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 514105321093282895, guid: 0d2d836e2e83b754fa1a1c4022d6d65d, type: 3}
