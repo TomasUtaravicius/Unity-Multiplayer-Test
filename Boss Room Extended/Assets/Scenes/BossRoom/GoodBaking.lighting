@@ -7,7 +7,7 @@ LightingSettings:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GoodBaking
-  serializedVersion: 3
+  serializedVersion: 6
   m_GIWorkflowMode: 1
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 0
@@ -20,13 +20,13 @@ LightingSettings:
   m_LightmapMaxSize: 1024
   m_BakeResolution: 8
   m_Padding: 4
-  m_TextureCompression: 1
+  m_LightmapCompression: 3
   m_AO: 0
   m_AOMaxDistance: 3
   m_CompAOExponent: 0
   m_CompAOExponentDirect: 0
   m_ExtractAO: 0
-  m_MixedBakeMode: 1
+  m_MixedBakeMode: 0
   m_LightmapsBakeMode: 0
   m_FilterMode: 1
   m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
@@ -46,8 +46,8 @@ LightingSettings:
   m_PVREnvironmentReferencePointCount: 2048
   m_LightProbeSampleCountMultiplier: 8
   m_PVRBounces: 2
-  m_PVRMinBounces: 1
-  m_PVREnvironmentMIS: 0
+  m_PVRMinBounces: 2
+  m_PVREnvironmentImportanceSampling: 0
   m_PVRFilteringMode: 1
   m_PVRDenoiserTypeDirect: 3
   m_PVRDenoiserTypeIndirect: 3
@@ -61,3 +61,6 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0.422
   m_PVRFilteringAtrousPositionSigmaIndirect: 0.378
   m_PVRFilteringAtrousPositionSigmaAO: 1
+  m_PVRTiledBaking: 0
+  m_NumRaysToShootPerTexel: -1
+  m_RespectSceneVisibilityWhenBakingGI: 0
