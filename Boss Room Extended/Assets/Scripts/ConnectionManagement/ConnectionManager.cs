@@ -56,7 +56,7 @@ namespace Unity.BossRoom.ConnectionManagement
     public class ConnectionManager : MonoBehaviour
     {
         ConnectionState m_CurrentState;
-
+        public string mainMenuSceneName = "MainMenu";
         [Inject]
         NetworkManager m_NetworkManager;
         public NetworkManager NetworkManager => m_NetworkManager;
@@ -93,6 +93,7 @@ namespace Unity.BossRoom.ConnectionManagement
 
             m_CurrentState = m_Offline;
 
+            m_Offline.k_MainMenuSceneName = mainMenuSceneName;
             NetworkManager.OnClientConnectedCallback += OnClientConnectedCallback;
             NetworkManager.OnClientDisconnectCallback += OnClientDisconnectCallback;
             NetworkManager.OnServerStarted += OnServerStarted;

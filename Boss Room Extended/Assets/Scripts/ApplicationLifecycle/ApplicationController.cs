@@ -9,6 +9,7 @@ using Unity.BossRoom.UnityServices;
 using Unity.BossRoom.UnityServices.Auth;
 using Unity.BossRoom.UnityServices.Lobbies;
 using Unity.BossRoom.Utils;
+using Unity.Multiplayer.Samples.Utilities;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,8 +25,10 @@ namespace Unity.BossRoom.ApplicationLifecycle
     public class ApplicationController : LifetimeScope
     {
         [SerializeField] UpdateRunner m_UpdateRunner;
+        [SerializeField] string mainMenuSceneName = "MainMenu";
         [SerializeField] ConnectionManager m_ConnectionManager;
         [SerializeField] NetworkManager m_NetworkManager;
+        [SerializeField] bool autoHost = false;
 
         LocalLobby m_LocalLobby;
         LobbyServiceFacade m_LobbyServiceFacade;
@@ -91,7 +94,13 @@ namespace Unity.BossRoom.ApplicationLifecycle
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(m_UpdateRunner.gameObject);
             Application.targetFrameRate = 120;
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(mainMenuSceneName);
+
+            if(autoHost)
+            {
+                Invoke("AutoHostGame", 3f);
+            }
+            
         }
 
         protected override void OnDestroy()
@@ -128,6 +137,16 @@ namespace Unity.BossRoom.ApplicationLifecycle
                 StartCoroutine(LeaveBeforeQuit());
             }
             return canQuit;
+        }
+        public void AutoHostGame()
+        {
+            m_ConnectionManager.StartHostIp("server", "127.0.0.1", 9998);
+            Invoke("StartGame", 0.5f);
+            //m_NetworkCharSelection.ChangeSeatServerRpc(NetworkManager.Singleton.LocalClientId, 7, true);
+        }
+        public void StartGame()
+        {
+            SceneLoaderWrapper.Instance.LoadScene("Playground_Game", useNetworkSceneManager: true);
         }
 
         private void QuitGame(QuitApplicationMessage msg)

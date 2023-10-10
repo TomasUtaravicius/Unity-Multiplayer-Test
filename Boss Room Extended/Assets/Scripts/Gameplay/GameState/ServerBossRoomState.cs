@@ -126,6 +126,7 @@ namespace Unity.BossRoom.Gameplay.GameState
                 InitialSpawnDone = true;
                 foreach (var kvp in NetworkManager.Singleton.ConnectedClients)
                 {
+                    Debug.Log("Spawning player: " + kvp.Key);
                     SpawnPlayer(kvp.Key, false);
                 }
             }
