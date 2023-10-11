@@ -20,6 +20,8 @@ namespace Unity.BossRoom.ConnectionManagement
         [Inject]
         IPublisher<ConnectionEventMessage> m_ConnectionEventPublisher;
 
+        public bool autoHost = false;
+        public string charSelectSceneName = "CharSelect";
         // used in ApprovalCheck. This is intended as a bit of light protection against DOS attacks that rely on sending silly big buffers of garbage.
         const int k_MaxConnectPayload = 1024;
 
@@ -27,7 +29,7 @@ namespace Unity.BossRoom.ConnectionManagement
         {
             //The "BossRoom" server always advances to CharSelect immediately on start. Different games
             //may do this differently.
-            SceneLoaderWrapper.Instance.LoadScene("CharSelect", useNetworkSceneManager: true);
+            SceneLoaderWrapper.Instance.LoadScene(charSelectSceneName, useNetworkSceneManager: true);
 
             if (m_LobbyServiceFacade.CurrentUnityLobby != null)
             {

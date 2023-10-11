@@ -141,13 +141,10 @@ namespace Unity.BossRoom.ApplicationLifecycle
         public void AutoHostGame()
         {
             m_ConnectionManager.StartHostIp("server", "127.0.0.1", 9998);
-            Invoke("StartGame", 0.5f);
+            //Invoke("StartGame", 0.5f);
             //m_NetworkCharSelection.ChangeSeatServerRpc(NetworkManager.Singleton.LocalClientId, 7, true);
         }
-        public void StartGame()
-        {
-            SceneLoaderWrapper.Instance.LoadScene("Playground_Game", useNetworkSceneManager: true);
-        }
+        
 
         private void QuitGame(QuitApplicationMessage msg)
         {

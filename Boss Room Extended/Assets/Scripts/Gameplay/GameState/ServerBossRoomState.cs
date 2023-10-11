@@ -152,6 +152,7 @@ namespace Unity.BossRoom.Gameplay.GameState
         {
             Transform spawnPoint = null;
 
+
             if (m_PlayerSpawnPointsList == null || m_PlayerSpawnPointsList.Count == 0)
             {
                 m_PlayerSpawnPointsList = new List<Transform>(m_PlayerSpawnPoints);
@@ -200,6 +201,8 @@ namespace Unity.BossRoom.Gameplay.GameState
 
             networkAvatarGuidState.AvatarGuid.Value =
                 persistentPlayer.NetworkAvatarGuidState.AvatarGuid.Value;
+
+            Debug.Log(" network avatar GUID: " + networkAvatarGuidState.AvatarGuid.Value);
 
             // pass name from persistent player to avatar
             if (newPlayer.TryGetComponent(out NetworkNameState networkNameState))

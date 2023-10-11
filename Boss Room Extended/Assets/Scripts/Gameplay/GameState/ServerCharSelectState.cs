@@ -28,6 +28,8 @@ namespace Unity.BossRoom.Gameplay.GameState
         [Inject]
         ConnectionManager m_ConnectionManager;
 
+        [SerializeField] bool autoHost = false;
+
         protected override void Awake()
         {
             base.Awake();
@@ -35,7 +37,31 @@ namespace Unity.BossRoom.Gameplay.GameState
 
             m_NetcodeHooks.OnNetworkSpawnHook += OnNetworkSpawn;
             m_NetcodeHooks.OnNetworkDespawnHook += OnNetworkDespawn;
+
+            if(autoHost)
+            {
+                Invoke("StartGame", 2f);
+            }
+            
         }
+        public void StartGame()
+        {
+            foreach (NetworkCharSelection.LobbyPlayerState playerInfo in networkCharSelection.LobbyPlayers)
+            {
+                Debug.Log("Char select player in a lobby");
+                var playerNetworkObject = NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(playerInfo.ClientId);
+
+                if (playerNetworkObject && playerNetworkObject.TryGetComponent(out PersistentPlayer persistentPlayer))
+                {
+                    // pass avatar GUID to PersistentPlayer
+                    // it'd be great to simplify this with something like a NetworkScriptableObjects :(
+                    persistentPlayer.NetworkAvatarGuidState.AvatarGuid.Value =
+                        networkCharSelection.AvatarConfiguration[7].Guid.ToNetworkGuid();
+                }
+            }
+            SceneLoaderWrapper.Instance.LoadScene("Playground_Game", useNetworkSceneManager: true);
+        }
+
 
         protected override void OnDestroy()
         {

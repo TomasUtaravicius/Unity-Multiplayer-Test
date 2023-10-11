@@ -55,8 +55,10 @@ namespace Unity.BossRoom.ConnectionManagement
     /// </summary>
     public class ConnectionManager : MonoBehaviour
     {
+        public bool autoHost = false;
         ConnectionState m_CurrentState;
         public string mainMenuSceneName = "MainMenu";
+        public string charSelectSceneName = "CharSelect";
         [Inject]
         NetworkManager m_NetworkManager;
         public NetworkManager NetworkManager => m_NetworkManager;
@@ -94,12 +96,19 @@ namespace Unity.BossRoom.ConnectionManagement
             m_CurrentState = m_Offline;
 
             m_Offline.k_MainMenuSceneName = mainMenuSceneName;
+
             NetworkManager.OnClientConnectedCallback += OnClientConnectedCallback;
             NetworkManager.OnClientDisconnectCallback += OnClientDisconnectCallback;
             NetworkManager.OnServerStarted += OnServerStarted;
             NetworkManager.ConnectionApprovalCallback += ApprovalCheck;
             NetworkManager.OnTransportFailure += OnTransportFailure;
             NetworkManager.OnServerStopped += OnServerStopped;
+
+            if(autoHost)
+            {
+                m_Hosting.autoHost = true;
+                m_Hosting.charSelectSceneName = charSelectSceneName;
+            }
         }
 
         void OnDestroy()
