@@ -1,14 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Unity.BossRoom.Infrastructure;
-using Unity.BossRoom.UnityServices.Lobbies;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// Handles the list of LobbyListItemUIs and ensures it stays synchronized with the lobby list from the service.
     /// </summary>
@@ -160,4 +157,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_UpdateRunner.Unsubscribe(PeriodicRefresh);
         }
     }
-}
+

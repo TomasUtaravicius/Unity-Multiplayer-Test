@@ -3,8 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
     public class LobbyCreationUI : MonoBehaviour
     {
         [SerializeField] InputField m_LobbyNameInputField;
@@ -40,4 +38,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_CanvasGroup.blocksRaycasts = false;
         }
     }
-}
+

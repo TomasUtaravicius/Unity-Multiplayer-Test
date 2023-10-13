@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Unity.BossRoom.Infrastructure
-{
+
     /// <summary>
     /// Class for encapsulating game-related events within ScriptableObject instances. This class defines a List of
     /// GameEventListeners, which will be notified whenever this GameEvent's Raise() method is fired.
@@ -44,4 +43,4 @@ namespace Unity.BossRoom.Infrastructure
             m_Listeners.Remove(listener);
         }
     }
-}
+

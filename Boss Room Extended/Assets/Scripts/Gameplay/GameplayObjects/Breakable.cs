@@ -1,11 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.Infrastructure;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     /// <summary>
     /// This script handles the logic for a simple "single-shot" breakable object like a pot, or
     /// other stationary items with arbitrary amounts of HP, like spawner-portal crystals.
@@ -204,5 +201,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
     }
 
 
-}
 

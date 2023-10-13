@@ -1,6 +1,4 @@
 using System;
-using Unity.BossRoom.ConnectionManagement;
-using Unity.BossRoom.Gameplay.Actions;
 using Unity.Multiplayer.Samples.BossRoom;
 using Unity.Multiplayer.Samples.Utilities;
 using Unity.Netcode;
@@ -8,8 +6,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.GameState
-{
+
     [RequireComponent(typeof(NetcodeHooks))]
     public class ServerPostGameState : GameStateBehaviour
     {
@@ -70,4 +67,4 @@ namespace Unity.BossRoom.Gameplay.GameState
             m_ConnectionManager.RequestShutdown();
         }
     }
-}
+

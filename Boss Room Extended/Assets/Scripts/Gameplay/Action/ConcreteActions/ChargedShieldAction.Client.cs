@@ -1,10 +1,6 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.VisualEffects;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
     public partial class ChargedShieldAction
     {
         /// <summary>
@@ -67,4 +63,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             base.AnticipateActionClient(clientCharacter);
         }
     }
-}
+

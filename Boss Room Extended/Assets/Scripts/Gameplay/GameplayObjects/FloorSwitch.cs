@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     /// <summary>
     /// Server-side logic for a floor switch (a/k/a "pressure plate").
     /// This script should be attached to a physics trigger.
@@ -74,4 +73,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
             m_AnimatorPressedDownBoolVarID = Animator.StringToHash(k_AnimatorPressedDownBoolVarName);
         }
     }
-}
+

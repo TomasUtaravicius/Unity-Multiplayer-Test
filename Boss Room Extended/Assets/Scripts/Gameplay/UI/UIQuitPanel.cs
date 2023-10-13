@@ -1,12 +1,7 @@
 using System;
-using Unity.BossRoom.ApplicationLifecycle.Messages;
-using Unity.BossRoom.ConnectionManagement;
-using Unity.BossRoom.Infrastructure;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
     public class UIQuitPanel : MonoBehaviour
     {
         enum QuitMode
@@ -41,4 +36,4 @@ namespace Unity.BossRoom.Gameplay.UI
             gameObject.SetActive(false);
         }
     }
-}
+

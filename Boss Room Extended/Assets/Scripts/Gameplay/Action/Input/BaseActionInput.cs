@@ -1,9 +1,7 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     public abstract class BaseActionInput : MonoBehaviour
     {
         protected ServerCharacter m_PlayerOwner;
@@ -28,4 +26,4 @@ namespace Unity.BossRoom.Gameplay.Actions
 
         public virtual void OnReleaseKey() { }
     }
-}
+

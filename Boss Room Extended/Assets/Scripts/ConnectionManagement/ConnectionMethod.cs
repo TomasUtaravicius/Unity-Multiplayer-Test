@@ -1,7 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using Unity.BossRoom.UnityServices.Lobbies;
-using Unity.BossRoom.Utils;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
 using Unity.Services.Authentication;
@@ -10,8 +8,7 @@ using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
 
-namespace Unity.BossRoom.ConnectionManagement
-{
+
     /// <summary>
     /// ConnectionMethod contains all setup needed to setup NGO to be ready to start a connection, either host or client side.
     /// Please override this abstract class to add a new transport or way of connecting.
@@ -75,7 +72,7 @@ namespace Unity.BossRoom.ConnectionManagement
         /// might want to show an error popup and ask your player to connect to the internet.
         protected string GetPlayerId()
         {
-            if (Services.Core.UnityServices.State != ServicesInitializationState.Initialized)
+            if (Unity.Services.Core.UnityServices.State != ServicesInitializationState.Initialized)
             {
                 return ClientPrefs.GetGuid() + m_ProfileManager.Profile;
             }
@@ -206,4 +203,4 @@ namespace Unity.BossRoom.ConnectionManagement
             utp.SetRelayServerData(new RelayServerData(hostAllocation, k_DtlsConnType)); // This is with DTLS enabled for a secure connection
         }
     }
-}
+

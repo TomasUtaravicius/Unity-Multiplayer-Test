@@ -1,10 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects;
 using Unity.Multiplayer.Samples.Utilities;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     public class ClientBossRoomLoadingScreen : ClientLoadingScreen
     {
         [SerializeField]
@@ -34,4 +32,4 @@ namespace Unity.BossRoom.Gameplay.UI
             return "";
         }
     }
-}
+

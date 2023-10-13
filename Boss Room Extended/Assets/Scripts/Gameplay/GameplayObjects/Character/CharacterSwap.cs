@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.GameplayObjects.AnimationCallbacks;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
-{
+
     /// <summary>
     /// Responsible for storing of all of the pieces of a character, and swapping the pieces out en masse when asked to.
     /// </summary>
@@ -195,4 +193,3 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             }
         }
     }
-}

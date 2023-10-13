@@ -1,10 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     [CreateAssetMenu(menuName = "BossRoom/Actions/Chase Action")]
     public class ChaseAction : Action
     {
@@ -122,4 +120,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             return ActionConclusion.Continue;
         }
     }
-}
+

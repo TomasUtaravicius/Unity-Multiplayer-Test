@@ -1,9 +1,6 @@
 using System;
 using Unity.Netcode;
 using UnityEngine;
-
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
-{
     public class ClientPlayerAvatar : NetworkBehaviour
     {
         [SerializeField]
@@ -11,7 +8,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
 
         public static event Action<ClientPlayerAvatar> LocalClientSpawned;
 
-        public static event Action LocalClientDespawned;
+        public static event System.Action LocalClientDespawned;
 
         public override void OnNetworkSpawn()
         {
@@ -52,4 +49,3 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             }
         }
     }
-}

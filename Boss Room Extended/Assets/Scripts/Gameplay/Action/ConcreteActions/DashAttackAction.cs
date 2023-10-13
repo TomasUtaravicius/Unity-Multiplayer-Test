@@ -1,10 +1,7 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// Causes the attacker to teleport near a target spot, then perform a melee attack. The client
     /// visualization moves the character locally beforehand, making the character appear to dash to the
@@ -114,4 +111,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             return ActionConclusion.Continue;
         }
     }
-}
+

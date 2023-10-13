@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.VisualEffects;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,8 +9,7 @@ using UnityEditor;
 using UnityEditor.Animations;
 #endif
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.AnimationCallbacks
-{
+
     /// <summary>
     /// Instantiates and maintains graphics prefabs and sound effects. They're triggered by entering
     /// (or exiting) specific nodes in an Animator. (Each relevant Animator node must have an
@@ -395,4 +392,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.AnimationCallbacks
 
     }
 #endif
-}
+

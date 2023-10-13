@@ -1,14 +1,8 @@
 using System;
-using Unity.BossRoom.CameraUtils;
-using Unity.BossRoom.Gameplay.UserInput;
-using Unity.BossRoom.Gameplay.Configuration;
-using Unity.BossRoom.Gameplay.Actions;
-using Unity.BossRoom.Utils;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
-{
+
     /// <summary>
     /// <see cref="ClientCharacter"/> is responsible for displaying a character on the client's screen based on state information sent by the server.
     /// </summary>
@@ -323,4 +317,3 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             return false;
         }
     }
-}

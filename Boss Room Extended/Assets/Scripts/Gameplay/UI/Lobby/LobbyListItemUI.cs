@@ -1,11 +1,9 @@
 using System;
 using TMPro;
-using Unity.BossRoom.UnityServices.Lobbies;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// An individual Lobby UI in the list of available lobbies
     /// </summary>
@@ -31,4 +29,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_LobbyUIMediator.JoinLobbyRequest(m_Data);
         }
     }
-}
+

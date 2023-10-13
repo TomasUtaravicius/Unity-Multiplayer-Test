@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 
-namespace Unity.BossRoom.UnityServices.Lobbies
-{
+
     public struct LobbyListFetchedMessage
     {
         public readonly IReadOnlyList<LocalLobby> LocalLobbies;
@@ -11,4 +10,4 @@ namespace Unity.BossRoom.UnityServices.Lobbies
             LocalLobbies = localLobbies;
         }
     }
-}
+

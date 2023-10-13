@@ -1,16 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.ConnectionManagement;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.Gameplay.Messages;
-using Unity.BossRoom.Infrastructure;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// Handles the display of in-game messages in a message feed
     /// </summary>
@@ -128,4 +122,4 @@ namespace Unity.BossRoom.Gameplay.UI
         }
 
     }
-}
+

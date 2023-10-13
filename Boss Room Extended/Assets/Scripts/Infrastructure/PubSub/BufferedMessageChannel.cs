@@ -1,7 +1,6 @@
 using System;
 
-namespace Unity.BossRoom.Infrastructure
-{
+
     public class BufferedMessageChannel<T> : MessageChannel<T>, IBufferedMessageChannel<T>
     {
         public override void Publish(T message)
@@ -26,4 +25,4 @@ namespace Unity.BossRoom.Infrastructure
         public bool HasBufferedMessage { get; private set; } = false;
         public T BufferedMessage { get; private set; }
     }
-}
+

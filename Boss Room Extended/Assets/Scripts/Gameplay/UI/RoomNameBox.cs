@@ -1,12 +1,9 @@
 using System;
 using TMPro;
-using Unity.BossRoom.UnityServices.Lobbies;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
     public class RoomNameBox : MonoBehaviour
     {
         [SerializeField]
@@ -54,4 +51,3 @@ namespace Unity.BossRoom.Gameplay.UI
             GUIUtility.systemCopyBuffer = m_LobbyCode;
         }
     }
-}

@@ -1,14 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.VisualEffects;
 using Unity.Netcode;
 using UnityEngine;
-using BlockingMode = Unity.BossRoom.Gameplay.Actions.BlockingModeType;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// The abstract parent class that all Actions derive from.
     /// </summary>
@@ -336,4 +331,3 @@ namespace Unity.BossRoom.Gameplay.Actions
         }
 
     }
-}

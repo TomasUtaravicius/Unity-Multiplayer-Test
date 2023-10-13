@@ -1,7 +1,6 @@
 using System;
 
-namespace Unity.BossRoom.Infrastructure
-{
+
     public interface IPublisher<T>
     {
         void Publish(T message);
@@ -23,4 +22,4 @@ namespace Unity.BossRoom.Infrastructure
         bool HasBufferedMessage { get; }
         T BufferedMessage { get; }
     }
-}
+

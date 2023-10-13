@@ -1,9 +1,6 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
     /// <summary>
     /// Action that plays while a character is Stunned. The character does nothing... just sits there.
     ///
@@ -47,4 +44,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             return ActionConclusion.Continue;
         }
     }
-}
+

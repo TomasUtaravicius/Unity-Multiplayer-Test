@@ -9,8 +9,7 @@ using System.Text;
 
 using UnityEngine;
 
-namespace Unity.BossRoom.Utils
-{
+
     public class ProfileManager
     {
         public const string AuthProfileCommandLineArg = "-AuthProfile";
@@ -112,4 +111,4 @@ namespace Unity.BossRoom.Utils
         }
 
     }
-}
+

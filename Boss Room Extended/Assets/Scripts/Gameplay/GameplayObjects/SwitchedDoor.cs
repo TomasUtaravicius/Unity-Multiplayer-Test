@@ -1,12 +1,9 @@
 using System;
-using Unity.BossRoom.Gameplay.Messages;
-using Unity.BossRoom.Infrastructure;
 using Unity.Netcode;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     /// <summary>
     /// This class contains both client and server logic for a door that is opened when a player stands on a floor switch.
     /// (Assign the floor switches for this door in the editor.)
@@ -109,4 +106,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
             m_AnimatorDoorOpenBoolID = Animator.StringToHash(k_AnimatorDoorOpenBoolVarName);
         }
     }
-}
+

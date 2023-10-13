@@ -4,8 +4,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace Unity.BossRoom.Editor
-{
+
     /// <remarks>
     /// Custom readme editor window based on the readme created for URP. For more context, see:
     /// https://github.com/Unity-Technologies/Graphics/tree/master/com.unity.template-universal
@@ -184,4 +183,4 @@ namespace Unity.BossRoom.Editor
             return GUI.Button(position, label, LinkStyle);
         }
     }
-}
+

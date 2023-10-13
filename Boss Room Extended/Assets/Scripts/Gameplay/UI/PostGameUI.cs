@@ -1,12 +1,10 @@
 using System;
-using Unity.BossRoom.Gameplay.GameState;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// Provides backing logic for all of the UI that runs in the PostGame stage.
     /// </summary>
@@ -103,5 +101,5 @@ namespace Unity.BossRoom.Gameplay.UI
             m_PostGameState.GoToMainMenu();
         }
     }
-}
+
 

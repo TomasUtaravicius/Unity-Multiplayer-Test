@@ -1,10 +1,7 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// Area-of-effect attack Action. The attack is centered on a point provided by the client.
     /// </summary>
@@ -86,4 +83,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             throw new Exception("This should not execute");
         }
     }
-}
+

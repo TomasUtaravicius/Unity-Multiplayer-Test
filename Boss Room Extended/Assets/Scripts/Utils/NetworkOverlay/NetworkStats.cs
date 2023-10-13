@@ -4,8 +4,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.Utils
-{
+
     /// This utility help showing Network statistics at runtime.
     ///
     /// This component attaches to any networked object.
@@ -83,13 +82,13 @@ namespace Unity.BossRoom.Utils
         // Creating a UI text object and add it to NetworkOverlay canvas
         void CreateNetworkStatsText()
         {
-            Assert.IsNotNull(Editor.NetworkOverlay.Instance,
+            Assert.IsNotNull(NetworkOverlay.Instance,
                 "No NetworkOverlay object part of scene. Add NetworkOverlay prefab to bootstrap scene!");
 
             string hostType = IsHost ? "Host" : IsClient ? "Client" : "Unknown";
-            Editor.NetworkOverlay.Instance.AddTextToUI("UI Host Type Text", $"Type: {hostType}", out m_TextHostType);
-            Editor.NetworkOverlay.Instance.AddTextToUI("UI Stat Text", "No Stat", out m_TextStat);
-            Editor.NetworkOverlay.Instance.AddTextToUI("UI Bad Conditions Text", "", out m_TextBadNetworkConditions);
+            NetworkOverlay.Instance.AddTextToUI("UI Host Type Text", $"Type: {hostType}", out m_TextHostType);
+            NetworkOverlay.Instance.AddTextToUI("UI Stat Text", "No Stat", out m_TextStat);
+            NetworkOverlay.Instance.AddTextToUI("UI Bad Conditions Text", "", out m_TextBadNetworkConditions);
         }
 
         void FixedUpdate()
@@ -178,4 +177,3 @@ namespace Unity.BossRoom.Utils
             }
         }
     }
-}

@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace Unity.BossRoom.Utils
-{
+
     public class PrefabSpawner : MonoBehaviour
     {
         [SerializeField]
@@ -24,4 +23,4 @@ namespace Unity.BossRoom.Utils
             Instantiate(m_Prefab, m_UseLocalPosition ? transform.position : m_CustomPosition, m_UseLocalRotation ? transform.rotation : m_CustomRotation);
         }
     }
-}
+

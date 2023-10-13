@@ -1,9 +1,7 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     [CreateAssetMenu(menuName = "BossRoom/Actions/Emote Action")]
     public class EmoteAction : Action
     {
@@ -32,4 +30,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             return ActionConclusion.Continue;
         }
     }
-}
+

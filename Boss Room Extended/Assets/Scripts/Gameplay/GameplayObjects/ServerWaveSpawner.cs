@@ -1,12 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
+
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     /// <summary>
     /// Component responsible for spawning prefab clones in waves on the server.
     /// <see cref="EnemyPortal"/> calls our SetSpawnerEnabled() to turn on/off spawning.
@@ -313,4 +312,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
             return false;
         }
     }
-}
+

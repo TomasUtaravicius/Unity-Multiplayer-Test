@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using Unity.Services.Lobbies.Models;
 
-namespace Unity.BossRoom.UnityServices.Lobbies
-{
+
     /// <summary>
     /// Data for a local lobby user instance. This will update data and is observed to know when to push local user changes to the entire lobby.
     /// </summary>
@@ -124,4 +123,4 @@ namespace Unity.BossRoom.UnityServices.Lobbies
                 {"DisplayName", new PlayerDataObject(PlayerDataObject.VisibilityOptions.Member, DisplayName)},
             };
     }
-}
+

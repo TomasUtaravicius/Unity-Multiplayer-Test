@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
     public class ChargedActionInput : BaseActionInput
     {
         protected float m_StartTime;
@@ -31,4 +29,4 @@ namespace Unity.BossRoom.Gameplay.Actions
         }
 
     }
-}
+

@@ -3,8 +3,7 @@ using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Utils
-{
+
     /// <summary>
     /// NetworkBehaviour containing only one NetworkVariableString which represents this object's name.
     /// </summary>
@@ -33,4 +32,4 @@ namespace Unity.BossRoom.Utils
         public static implicit operator string(FixedPlayerName s) => s.ToString();
         public static implicit operator FixedPlayerName(string s) => new FixedPlayerName() { m_Name = new FixedString32Bytes(s) };
     }
-}
+

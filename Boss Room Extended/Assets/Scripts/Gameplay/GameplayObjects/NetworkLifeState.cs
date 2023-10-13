@@ -2,8 +2,7 @@ using System;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     public enum LifeState
     {
         Alive,
@@ -17,7 +16,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
     public class NetworkLifeState : NetworkBehaviour
     {
         [SerializeField]
-        NetworkVariable<LifeState> m_LifeState = new NetworkVariable<LifeState>(GameplayObjects.LifeState.Alive);
+        NetworkVariable<LifeState> m_LifeState = new NetworkVariable<LifeState>(global::LifeState.Alive);
 
         public NetworkVariable<LifeState> LifeState => m_LifeState;
 
@@ -28,4 +27,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
         public NetworkVariable<bool> IsGodMode { get; } = new NetworkVariable<bool>(false);
 #endif
     }
-}
+

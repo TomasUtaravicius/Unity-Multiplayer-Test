@@ -1,17 +1,10 @@
 using System;
 using System.Collections;
-using Unity.BossRoom.ConnectionManagement;
-using Unity.BossRoom.Gameplay.Actions;
-using Unity.BossRoom.Gameplay.Configuration;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character.AI;
 using Unity.Multiplayer.Samples.BossRoom;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
-using Action = Unity.BossRoom.Gameplay.Actions.Action;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
-{
     /// <summary>
     /// Contains all NetworkVariables, RPCs and server-side logic of a character.
     /// This class was separated in two to keep client and server context self contained. This way you don't have to continuously ask yourself if code is running client or server side.
@@ -422,4 +415,3 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         public AIBrain AIBrain { get { return m_AIBrain; } }
 
     }
-}

@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace Unity.BossRoom.VisualEffects
-{
     public class ScrollingMaterialUVs : MonoBehaviour
     {
         public float ScrollX = .01f;
@@ -36,4 +34,4 @@ namespace Unity.BossRoom.VisualEffects
             m_Material.mainTextureOffset = new Vector2(0f, 0f);
         }
     }
-}
+

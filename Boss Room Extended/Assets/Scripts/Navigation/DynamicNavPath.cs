@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Unity.BossRoom.Navigation
-{
+
     public sealed class DynamicNavPath : IDisposable
     {
         /// <summary>
@@ -179,4 +178,4 @@ namespace Unity.BossRoom.Navigation
             m_NavigationSystem.OnNavigationMeshChanged -= OnNavMeshChanged;
         }
     }
-}
+

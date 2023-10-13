@@ -1,10 +1,8 @@
 using System;
-using Unity.BossRoom.Utils;
 using Unity.Collections;
 using Unity.Netcode;
 
-namespace Unity.BossRoom.Gameplay.Messages
-{
+
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
 
     public struct CheatUsedMessage : INetworkSerializeByMemcpy
@@ -23,4 +21,4 @@ namespace Unity.BossRoom.Gameplay.Messages
     }
 
 #endif
-}
+

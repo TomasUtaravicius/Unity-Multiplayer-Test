@@ -2,9 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
-    [RequireComponent(typeof(Image))]
+ [RequireComponent(typeof(Image))]
     public class UITinter : MonoBehaviour
     {
         [SerializeField]
@@ -22,4 +20,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_Image.color = m_TintColors[colorIndex];
         }
     }
-}
+

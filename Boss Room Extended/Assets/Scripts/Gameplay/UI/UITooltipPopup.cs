@@ -3,8 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// This controls the tooltip popup -- the little text blurb that appears when you hover your mouse
     /// over an ability icon.
@@ -74,4 +73,4 @@ namespace Unity.BossRoom.Gameplay.UI
 #endif
 
     }
-}
+

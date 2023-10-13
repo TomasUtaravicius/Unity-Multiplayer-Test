@@ -1,8 +1,6 @@
 using System;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.AnimationCallbacks
-{
     /// <summary>
     /// This is attached to each layer in the animator's state machines that needs to be able
     /// to trigger special effects (particles and sound effects). When an animation node begins or ends, this little
@@ -49,4 +47,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.AnimationCallbacks
             }
         }
     }
-}
+

@@ -2,8 +2,6 @@ using System;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
     /// <summary>
     /// Comprehensive class that contains information needed to play back any action on the server. This is what gets sent client->server when
     /// the Action gets played, and also what gets sent server->client to broadcast the action event. Note that the OUTCOMES of the action effect
@@ -112,4 +110,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             }
         }
     }
-}
+

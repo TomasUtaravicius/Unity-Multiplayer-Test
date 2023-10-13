@@ -2,8 +2,7 @@ using System;
 using UnityEngine;
 using TMPro;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// Simple popup panel to display information to players.
     /// </summary>
@@ -63,4 +62,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_IsDisplaying = false;
         }
     }
-}
+

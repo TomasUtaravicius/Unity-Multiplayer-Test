@@ -2,8 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Unity.BossRoom.Utils.Editor
-{
+
     public class NetworkOverlay : MonoBehaviour
     {
         public static NetworkOverlay Instance { get; private set; }
@@ -53,4 +52,4 @@ namespace Unity.BossRoom.Utils.Editor
             m_VerticalLayoutTransform = canvas.GetComponentInChildren<VerticalLayoutGroup>().transform;
         }
     }
-}
+

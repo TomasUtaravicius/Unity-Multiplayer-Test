@@ -1,12 +1,9 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Animations;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// Action for picking up "Heavy" items. For simplicity, this class will perform both the pickup (reparenting) of a
     /// NetworkObject, as well as the drop (deparenting).
@@ -129,4 +126,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             }
         }
     }
-}
+

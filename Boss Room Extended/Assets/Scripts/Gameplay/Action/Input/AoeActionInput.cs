@@ -1,9 +1,8 @@
-using Unity.BossRoom.Gameplay.GameplayObjects;
+
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// This class is the first step in AoE ability. It will update the initial input visuals' position and will be in charge
     /// of tracking the user inputs. Once the ability
@@ -104,4 +103,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             }
         }
     }
-}
+

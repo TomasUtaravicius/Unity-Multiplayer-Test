@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
     /// <summary>
     /// Handles the display of Popup messages. Instantiates and reuses popup panel prefabs to allow displaying multiple
     /// messages in succession.
@@ -96,4 +94,4 @@ namespace Unity.BossRoom.Gameplay.UI
             return popupPanel;
         }
     }
-}
+

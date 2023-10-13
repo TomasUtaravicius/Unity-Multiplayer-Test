@@ -1,12 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.BossRoom.ConnectionManagement;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.Gameplay.Messages;
-using Unity.BossRoom.Infrastructure;
-using Unity.BossRoom.Utils;
 using Unity.Multiplayer.Samples.BossRoom;
 using Unity.Multiplayer.Samples.Utilities;
 using Unity.Netcode;
@@ -17,8 +11,7 @@ using UnityEngine.Serialization;
 using VContainer;
 using Random = UnityEngine.Random;
 
-namespace Unity.BossRoom.Gameplay.GameState
-{
+
     /// <summary>
     /// Server specialization of core BossRoom game logic.
     /// </summary>
@@ -272,4 +265,4 @@ namespace Unity.BossRoom.Gameplay.GameState
             SceneLoaderWrapper.Instance.LoadScene("PostGame", useNetworkSceneManager: true);
         }
     }
-}
+

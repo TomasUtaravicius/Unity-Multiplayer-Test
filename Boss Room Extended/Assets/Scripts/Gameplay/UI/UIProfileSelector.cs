@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Unity.BossRoom.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     public class UIProfileSelector : MonoBehaviour
     {
         [SerializeField]
@@ -115,4 +113,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_CanvasGroup.blocksRaycasts = false;
         }
     }
-}
+

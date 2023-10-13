@@ -2,8 +2,6 @@ using System;
 using Unity.Netcode;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.GameState
-{
     public class NetworkPostGame : NetworkBehaviour
     {
         public NetworkVariable<WinState> WinState = new NetworkVariable<WinState>();
@@ -17,4 +15,4 @@ namespace Unity.BossRoom.Gameplay.GameState
             }
         }
     }
-}
+

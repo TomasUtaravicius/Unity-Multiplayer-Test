@@ -1,9 +1,7 @@
 using System;
-using Unity.BossRoom.Utils;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     public class ClickFeedbackLerper : MonoBehaviour
     {
         PositionLerper m_PositionLerper;
@@ -31,4 +29,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_TargetPosition.z = clientInputPosition.z;
         }
     }
-}
+

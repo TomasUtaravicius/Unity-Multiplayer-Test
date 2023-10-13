@@ -1,13 +1,10 @@
 using System;
-using Unity.BossRoom.Infrastructure;
-using Unity.BossRoom.UnityServices.Lobbies;
 using Unity.Multiplayer.Samples.BossRoom;
 using Unity.Netcode;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.ConnectionManagement
-{
+
     /// <summary>
     /// Connection state corresponding to a host starting up. Starts the host when entering the state. If successful,
     /// transitions to the Hosting state, if not, transitions back to the Offline state.
@@ -89,4 +86,4 @@ namespace Unity.BossRoom.ConnectionManagement
             m_ConnectionManager.ChangeState(m_ConnectionManager.m_Offline);
         }
     }
-}
+

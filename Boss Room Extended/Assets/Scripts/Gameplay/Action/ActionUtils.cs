@@ -1,10 +1,7 @@
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.GameplayObjects;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
     public static class ActionUtils
     {
         //cache Physics Cast hits, to minimize allocs.
@@ -233,4 +230,3 @@ namespace Unity.BossRoom.Gameplay.Actions
             return x.distance.CompareTo(y.distance);
         }
     }
-}

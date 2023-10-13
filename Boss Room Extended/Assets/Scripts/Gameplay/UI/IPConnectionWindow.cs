@@ -1,15 +1,12 @@
 using System;
 using System.Collections;
 using TMPro;
-using Unity.BossRoom.ConnectionManagement;
-using Unity.BossRoom.Infrastructure;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     public class IPConnectionWindow : MonoBehaviour
     {
         [SerializeField]
@@ -79,7 +76,7 @@ namespace Unity.BossRoom.Gameplay.UI
             StopAllCoroutines();
         }
 
-        IEnumerator DisplayUTPConnectionDuration(int maxReconnectAttempts, int connectTimeoutMS, Action endAction)
+        IEnumerator DisplayUTPConnectionDuration(int maxReconnectAttempts, int connectTimeoutMS, System.Action endAction)
         {
             var connectionDuration = maxReconnectAttempts * connectTimeoutMS / 1000f;
 
@@ -103,4 +100,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_IPUIMediator.JoiningWindowCancelled();
         }
     }
-}
+

@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     /// <summary>
     /// Logic that handles an FX-based pretend-missile.
     /// </summary>
@@ -99,4 +98,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
             }
         }
     }
-}
+

@@ -1,13 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.Configuration;
-using Unity.BossRoom.Infrastructure;
+
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
-using Avatar = Unity.BossRoom.Gameplay.Configuration.Avatar;
-
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
-{
     /// <summary>
     /// NetworkBehaviour component to send/receive GUIDs from server to clients.
     /// </summary>
@@ -69,4 +64,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             }
         }
     }
-}
+

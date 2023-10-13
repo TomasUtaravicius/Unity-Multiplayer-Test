@@ -1,7 +1,6 @@
 using System;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     /// <summary>
     /// Describes how the character's movement should be animated: as standing idle, running normally,
     /// magically slowed, sped up, etc. (Not all statuses are currently used by game content,
@@ -17,4 +16,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
         Hasted,       // character's movement is magically enhanced
         Walking,      // character should appear to be "walking" rather than normal running (e.g. for cut-scenes)
     }
-}
+

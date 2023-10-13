@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
-{
     /// <summary>
     /// Wrapper class for direct references to components relevant to physics.
     /// Each instance of a PhysicsWrapper is registered to a static dictionary, indexed by the NetworkObject's ID.
@@ -57,4 +55,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             return m_PhysicsWrappers.TryGetValue(networkObjectID, out physicsWrapper);
         }
     }
-}
+

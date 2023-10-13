@@ -2,8 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.AnimationCallbacks
-{
+
     /// <summary>
     /// Plays one of a few sound effects, on a loop, based on a variable in an Animator.
     /// We use this to play footstep sounds.
@@ -154,4 +153,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.AnimationCallbacks
         }
 #endif
     }
-}
+

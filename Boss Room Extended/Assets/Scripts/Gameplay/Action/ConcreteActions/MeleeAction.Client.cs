@@ -1,12 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.VisualEffects;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     public partial class MeleeAction
     {
         //have we actually played an impact? This won't necessarily happen for all swings. Sometimes you're just swinging at space.
@@ -141,4 +138,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             //But for now, if the original target is no longer present, then we just don't play our hit react on anything.
         }
     }
-}
+

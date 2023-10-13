@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Unity.BossRoom.Editor
-{
+
     /// <remarks>
     /// Custom readme class based on the readme created for URP. For more context, see:
     /// https://github.com/Unity-Technologies/Graphics/tree/master/com.unity.template-universal
@@ -24,4 +23,4 @@ namespace Unity.BossRoom.Editor
             public string url;
         }
     }
-}
+

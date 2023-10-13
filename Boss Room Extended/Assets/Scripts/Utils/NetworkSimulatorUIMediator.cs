@@ -8,8 +8,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Unity.BossRoom.Utils
-{
+
     public class NetworkSimulatorUIMediator : MonoBehaviour
     {
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -284,4 +283,4 @@ namespace Unity.BossRoom.Utils
         }
 #endif
     }
-}
+

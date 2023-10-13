@@ -1,13 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using Unity.BossRoom.Infrastructure;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.UnityServices.Auth
-{
     public class AuthenticationServiceFacade
     {
         [Inject]
@@ -102,4 +99,4 @@ namespace Unity.BossRoom.UnityServices.Auth
             }
         }
     }
-}
+

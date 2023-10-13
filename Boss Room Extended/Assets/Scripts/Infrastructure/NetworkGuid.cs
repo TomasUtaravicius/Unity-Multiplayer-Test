@@ -1,8 +1,7 @@
 using System;
 using Unity.Netcode;
 
-namespace Unity.BossRoom.Infrastructure
-{
+
     public struct NetworkGuid : INetworkSerializeByMemcpy
     {
         public ulong FirstHalf;
@@ -27,4 +26,4 @@ namespace Unity.BossRoom.Infrastructure
             return new Guid(bytes);
         }
     }
-}
+

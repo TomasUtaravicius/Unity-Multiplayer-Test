@@ -1,10 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// The "Target" Action is not a skill, but rather the result of a user left-clicking an enemy. This
     /// Action runs persistently, and automatically resets the NetworkCharacterState.Target property if the
@@ -92,5 +90,5 @@ namespace Unity.BossRoom.Gameplay.Actions
             }
         }
     }
-}
+
 

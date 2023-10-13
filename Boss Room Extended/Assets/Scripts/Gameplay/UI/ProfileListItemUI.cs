@@ -1,11 +1,9 @@
 using System;
 using TMPro;
-using Unity.BossRoom.Utils;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     public class ProfileListItemUI : MonoBehaviour
     {
         [SerializeField]
@@ -28,4 +26,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_ProfileManager.DeleteProfile(m_ProfileNameText.text);
         }
     }
-}
+

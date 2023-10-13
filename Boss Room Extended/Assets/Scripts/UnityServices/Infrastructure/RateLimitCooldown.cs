@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Unity.BossRoom.UnityServices
-{
+
     public class RateLimitCooldown
     {
         public float CooldownTimeLength => m_CooldownTimeLength;
@@ -23,4 +22,4 @@ namespace Unity.BossRoom.UnityServices
             m_CooldownFinishedTime = Time.unscaledTime + m_CooldownTimeLength;
         }
     }
-}
+

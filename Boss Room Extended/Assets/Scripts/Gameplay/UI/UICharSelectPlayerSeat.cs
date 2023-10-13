@@ -1,12 +1,10 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.Gameplay.GameState;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// Controls one of the eight "seats" on the character-select screen (the boxes along the bottom).
     /// </summary>
@@ -148,6 +146,5 @@ namespace Unity.BossRoom.Gameplay.UI
         {
             ClientCharSelectState.Instance.OnPlayerClickedSeat(m_SeatIndex);
         }
-
     }
-}
+

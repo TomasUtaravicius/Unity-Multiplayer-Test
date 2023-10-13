@@ -1,10 +1,8 @@
 using System;
-using Unity.BossRoom.Utils;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// Class containing references to UI children that we can display. Both are disabled by default on prefab.
     /// </summary>
@@ -33,4 +31,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_UIHealth.gameObject.SetActive(false);
         }
     }
-}
+

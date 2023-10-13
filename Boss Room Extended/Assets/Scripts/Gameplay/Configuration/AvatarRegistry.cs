@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Configuration
-{
+
     /// <summary>
     /// This ScriptableObject will be the container for all possible Avatars inside BossRoom.
     /// <see cref="Avatar"/>
@@ -30,4 +29,4 @@ namespace Unity.BossRoom.Gameplay.Configuration
             return m_Avatars[UnityEngine.Random.Range(0, m_Avatars.Length)];
         }
     }
-}
+

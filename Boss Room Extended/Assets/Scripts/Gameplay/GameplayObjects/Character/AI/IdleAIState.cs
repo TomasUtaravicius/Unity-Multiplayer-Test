@@ -1,8 +1,6 @@
 using System;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character.AI
-{
     public class IdleAIState : AIState
     {
         private AIBrain m_Brain;
@@ -44,4 +42,3 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character.AI
             }
         }
     }
-}

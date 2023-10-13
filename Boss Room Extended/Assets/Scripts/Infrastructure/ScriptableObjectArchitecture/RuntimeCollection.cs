@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Unity.BossRoom.Infrastructure
-{
+
     /// <summary>
     /// ScriptableObject class that contains a list of a given type. The instance of this ScriptableObject can be
     /// referenced by components, without a hard reference between systems.
@@ -35,4 +34,4 @@ namespace Unity.BossRoom.Infrastructure
             }
         }
     }
-}
+

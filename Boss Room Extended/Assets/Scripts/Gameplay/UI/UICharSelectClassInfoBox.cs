@@ -1,12 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.Configuration;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Action = Unity.BossRoom.Gameplay.Actions.Action;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
     /// <summary>
     /// Controls the "information box" on the character-select screen.
     /// </summary>
@@ -96,4 +92,4 @@ namespace Unity.BossRoom.Gameplay.UI
             }
         }
     }
-}
+

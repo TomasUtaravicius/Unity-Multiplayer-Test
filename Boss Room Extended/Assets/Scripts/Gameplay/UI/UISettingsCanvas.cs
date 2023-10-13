@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// Controls the special Canvas that has the settings icon and the settings window.
     /// The window itself is controlled by UISettingsPanel; the button is controlled here.
@@ -46,4 +45,4 @@ namespace Unity.BossRoom.Gameplay.UI
         }
 
     }
-}
+

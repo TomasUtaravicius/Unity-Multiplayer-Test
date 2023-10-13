@@ -1,11 +1,7 @@
 using System;
-using Unity.BossRoom.Audio;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Audio
-{
     /// <summary>
     /// Simple class to restart game theme on main menu load
     /// </summary>
@@ -64,4 +60,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Audio
             }
         }
     }
-}
+

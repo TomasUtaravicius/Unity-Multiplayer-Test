@@ -1,16 +1,10 @@
 using System;
-using Unity.BossRoom.Gameplay.Configuration;
 using TMPro;
-using Unity.BossRoom.ConnectionManagement;
-using Unity.BossRoom.Infrastructure;
-using Unity.BossRoom.UnityServices.Auth;
-using Unity.BossRoom.UnityServices.Lobbies;
 using Unity.Services.Core;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     public class LobbyUIMediator : MonoBehaviour
     {
         [SerializeField] CanvasGroup m_CanvasGroup;
@@ -272,4 +266,3 @@ namespace Unity.BossRoom.Gameplay.UI
             }
         }
     }
-}

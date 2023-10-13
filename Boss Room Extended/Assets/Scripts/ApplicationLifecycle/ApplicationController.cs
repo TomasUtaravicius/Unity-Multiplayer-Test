@@ -1,14 +1,5 @@
 using System;
 using System.Collections;
-using Unity.BossRoom.ApplicationLifecycle.Messages;
-using Unity.BossRoom.ConnectionManagement;
-using Unity.BossRoom.Gameplay.GameState;
-using Unity.BossRoom.Gameplay.Messages;
-using Unity.BossRoom.Infrastructure;
-using Unity.BossRoom.UnityServices;
-using Unity.BossRoom.UnityServices.Auth;
-using Unity.BossRoom.UnityServices.Lobbies;
-using Unity.BossRoom.Utils;
 using Unity.Multiplayer.Samples.Utilities;
 using Unity.Netcode;
 using UnityEngine;
@@ -16,8 +7,6 @@ using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
 
-namespace Unity.BossRoom.ApplicationLifecycle
-{
 
     /// <summary>
     /// An entry point to the application, where we bind all the common dependencies to the root DI scope.
@@ -155,4 +144,4 @@ namespace Unity.BossRoom.ApplicationLifecycle
 #endif
         }
     }
-}
+

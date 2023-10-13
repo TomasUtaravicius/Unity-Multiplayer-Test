@@ -1,11 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// Action that represents an always-hit raybeam-style ranged attack. A particle is shown from caster to target, and then the
     /// target takes damage. (It is not possible to escape the hit; the target ALWAYS takes damage.) This is intended for fairly
@@ -126,4 +123,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             }
         }
     }
-}
+

@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Unity.BossRoom.Infrastructure
-{
+
     /// <summary>
     /// Some objects might need to be on a slower update loop than the usual MonoBehaviour Update and without precise timing, e.g. to refresh data from services.
     /// Some might also not want to be coupled to a Unity object at all but still need an update loop.
@@ -98,4 +97,4 @@ namespace Unity.BossRoom.Infrastructure
             }
         }
     }
-}
+

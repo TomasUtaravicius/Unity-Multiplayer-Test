@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     [Serializable]
     public class ActionConfig
     {
@@ -106,4 +105,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             return false;
         }
     }
-}
+

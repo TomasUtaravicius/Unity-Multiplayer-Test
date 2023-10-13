@@ -3,8 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// Provides logic for a UI HUD Button to slightly shrink scale on pointer down.
     /// Also has an optional code interface for receiving notifications about down/up events (instead of just on-click)
@@ -17,12 +16,12 @@ namespace Unity.BossRoom.Gameplay.UI
         /// <summary>
         /// Called when the user clicks down on the button (but hasn't released the button yet)
         /// </summary>
-        public Action OnPointerDownEvent;
+        public System.Action OnPointerDownEvent;
 
         /// <summary>
         /// Called when the user clicks up on the button (completing a click event)
         /// </summary>
-        public Action OnPointerUpEvent;
+        public System.Action OnPointerUpEvent;
 
         public override void OnPointerDown(PointerEventData eventData)
         {
@@ -40,5 +39,5 @@ namespace Unity.BossRoom.Gameplay.UI
             OnPointerUpEvent?.Invoke();
         }
     }
-}
+
 

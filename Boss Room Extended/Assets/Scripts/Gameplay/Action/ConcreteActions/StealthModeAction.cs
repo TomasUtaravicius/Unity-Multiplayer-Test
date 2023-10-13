@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.VisualEffects;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// Causes the character to become hidden to enemies and other players. Notes:
     /// - Stealth starts after the ExecTimeSeconds has elapsed. If they are attacked during the Exec time, stealth is aborted.
@@ -120,4 +117,4 @@ namespace Unity.BossRoom.Gameplay.Actions
         }
 
     }
-}
+

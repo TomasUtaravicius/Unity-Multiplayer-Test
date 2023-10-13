@@ -1,12 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.Actions;
 using UnityEngine;
-using Action = Unity.BossRoom.Gameplay.Actions.Action;
 using Random = UnityEngine.Random;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character.AI
-{
     public class AttackAIState : AIState
     {
         private AIBrain m_Brain;
@@ -166,4 +162,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character.AI
             return null;
         }
     }
-}
+

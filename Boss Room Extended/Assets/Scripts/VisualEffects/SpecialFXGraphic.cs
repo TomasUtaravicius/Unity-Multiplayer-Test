@@ -7,8 +7,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace Unity.BossRoom.VisualEffects
-{
+
     /// <summary>
     /// Utility script attached to special-effects prefabs. These prefabs are
     /// used by various ActionFX that need to show special short-lived graphics
@@ -176,6 +175,5 @@ namespace Unity.BossRoom.VisualEffects
     }
 #endif
 
-}
 
 

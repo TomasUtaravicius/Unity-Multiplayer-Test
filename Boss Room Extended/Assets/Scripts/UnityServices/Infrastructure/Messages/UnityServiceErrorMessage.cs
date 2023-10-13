@@ -1,7 +1,6 @@
 using System;
 
-namespace Unity.BossRoom.UnityServices
-{
+
     public struct UnityServiceErrorMessage
     {
         public enum Service
@@ -23,4 +22,4 @@ namespace Unity.BossRoom.UnityServices
             OriginalException = originalException;
         }
     }
-}
+

@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace Unity.BossRoom.Utils
-{
+
     /// <summary>
     /// Utility struct to linearly interpolate between two Vector3 values. Allows for flexible linear interpolations
     /// where current and target change over time.
@@ -49,4 +48,4 @@ namespace Unity.BossRoom.Utils
             return Vector3.Lerp(m_LerpStart, target, lerpPercentage);
         }
     }
-}
+

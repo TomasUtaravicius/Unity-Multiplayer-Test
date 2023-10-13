@@ -1,15 +1,10 @@
 using System;
 using System.Collections;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.Infrastructure;
-using Unity.BossRoom.Utils;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// Class designed to only run on a client. Add this to a world-space prefab to display health or name on UI.
     /// </summary>
@@ -243,4 +238,4 @@ namespace Unity.BossRoom.Gameplay.UI
             }
         }
     }
-}
+

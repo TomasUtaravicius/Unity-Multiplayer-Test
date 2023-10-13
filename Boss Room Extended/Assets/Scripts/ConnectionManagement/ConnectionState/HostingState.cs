@@ -1,14 +1,11 @@
 using System;
-using Unity.BossRoom.Infrastructure;
-using Unity.BossRoom.UnityServices.Lobbies;
 using Unity.Multiplayer.Samples.BossRoom;
 using Unity.Multiplayer.Samples.Utilities;
 using Unity.Netcode;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.ConnectionManagement
-{
+
     /// <summary>
     /// Connection state corresponding to a listening host. Handles incoming client connections. When shutting down or
     /// being timed out, transitions to the Offline state.
@@ -151,4 +148,4 @@ namespace Unity.BossRoom.ConnectionManagement
                 ConnectStatus.LoggedInAgain : ConnectStatus.Success;
         }
     }
-}
+

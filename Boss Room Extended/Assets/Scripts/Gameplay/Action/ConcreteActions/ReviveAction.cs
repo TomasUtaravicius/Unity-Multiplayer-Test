@@ -1,12 +1,9 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     [CreateAssetMenu(menuName = "BossRoom/Actions/Revive Action")]
     public class ReviveAction : Action
     {
@@ -66,4 +63,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             }
         }
     }
-}
+

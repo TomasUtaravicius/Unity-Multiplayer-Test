@@ -1,11 +1,9 @@
 using System;
 using System.Collections;
-using Unity.BossRoom.Infrastructure;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.ConnectionManagement
-{
+
     /// <summary>
     /// Connection state corresponding to a client attempting to reconnect to a server. It will try to reconnect a
     /// number of times defined by the ConnectionManager's NbReconnectAttempts property. If it succeeds, it will
@@ -138,4 +136,4 @@ namespace Unity.BossRoom.ConnectionManagement
             }
         }
     }
-}
+

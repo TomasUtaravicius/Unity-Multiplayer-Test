@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.VisualEffects;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     public partial class ChargedLaunchProjectileAction
     {
         /// <summary>
@@ -61,4 +58,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             m_Graphics.Clear();
         }
     }
-}
+

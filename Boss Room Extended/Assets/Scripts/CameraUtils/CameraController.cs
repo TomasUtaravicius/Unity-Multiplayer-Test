@@ -2,8 +2,7 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.CameraUtils
-{
+
     public class CameraController : MonoBehaviour
     {
         private CinemachineFreeLook m_MainCamera;
@@ -29,4 +28,4 @@ namespace Unity.BossRoom.CameraUtils
             }
         }
     }
-}
+

@@ -1,11 +1,7 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.Infrastructure;
 using UnityEngine;
-using Action = Unity.BossRoom.Gameplay.Actions.Action;
 
-namespace Unity.BossRoom.Gameplay.Configuration
-{
+
     /// <summary>
     /// Data representation of a Character, containing such things as its starting HP and Mana, and what attacks it can do.
     /// </summary>
@@ -48,4 +44,4 @@ namespace Unity.BossRoom.Gameplay.Configuration
         [Tooltip("For players, this is the class banner (when inactive). (Not used for monsters)")]
         public Sprite ClassBannerUnlit;
     }
-}
+

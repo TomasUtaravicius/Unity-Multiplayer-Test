@@ -1,11 +1,8 @@
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// Class responsible for playing back action inputs from user.
     /// </summary>
@@ -478,5 +475,5 @@ namespace Unity.BossRoom.Gameplay.Actions
             }
         }
     }
-}
+
 

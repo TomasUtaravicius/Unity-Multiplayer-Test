@@ -1,11 +1,9 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// A defensive action where the character becomes resistant to damage.
     /// </summary>
@@ -173,4 +171,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             return true;
         }
     }
-}
+

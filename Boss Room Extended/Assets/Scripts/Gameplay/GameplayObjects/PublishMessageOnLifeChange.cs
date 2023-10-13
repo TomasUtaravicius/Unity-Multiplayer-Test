@@ -1,15 +1,10 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.Gameplay.GameState;
-using Unity.BossRoom.Gameplay.Messages;
-using Unity.BossRoom.Infrastructure;
-using Unity.BossRoom.Utils;
+
 using Unity.Netcode;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     /// <summary>
     /// Server-only component which publishes a message once the LifeState changes.
     /// </summary>
@@ -58,4 +53,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
             });
         }
     }
-}
+

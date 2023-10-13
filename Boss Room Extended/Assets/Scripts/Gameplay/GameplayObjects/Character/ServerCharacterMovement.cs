@@ -1,14 +1,11 @@
 
 using System;
-using Unity.BossRoom.Gameplay.Configuration;
-using Unity.BossRoom.Navigation;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
-{
+
     public enum MovementState
     {
         Idle = 0,
@@ -367,4 +364,3 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             }
         }
     }
-}

@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     /// <summary>
     /// Shared Network logic for targetable, NPC, pickup objects.
     /// </summary>
@@ -12,4 +11,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
 
         public bool IsValidTarget => true;
     }
-}
+

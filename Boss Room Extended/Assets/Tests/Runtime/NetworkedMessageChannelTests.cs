@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using NUnit.Framework;
-using Unity.BossRoom.Infrastructure;
 using Unity.Netcode;
 using UnityEngine;
 using Unity.Netcode.TestHelpers.Runtime;

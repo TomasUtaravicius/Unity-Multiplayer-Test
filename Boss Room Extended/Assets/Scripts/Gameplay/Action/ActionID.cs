@@ -1,8 +1,6 @@
 using System;
 using Unity.Netcode;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
     /// <summary>
     /// This struct is used by Action system (and GameDataSource) to refer to a specific action in runtime.
     /// It wraps a simple integer.
@@ -41,4 +39,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             return $"ActionID({ID})";
         }
     }
-}
+

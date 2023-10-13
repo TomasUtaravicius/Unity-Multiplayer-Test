@@ -2,8 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// Attach to any UI element that should have a tooltip popup. If the mouse hovers over this element
     /// long enough, the tooltip will appear and show the specified text.
@@ -106,4 +105,4 @@ namespace Unity.BossRoom.Gameplay.UI
         }
 #endif
     }
-}
+

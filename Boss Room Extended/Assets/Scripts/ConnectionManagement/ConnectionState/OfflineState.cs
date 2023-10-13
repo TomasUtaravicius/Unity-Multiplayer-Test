@@ -1,14 +1,10 @@
 using System;
-using Unity.BossRoom.ConnectionManagement;
-using Unity.BossRoom.UnityServices.Lobbies;
-using Unity.BossRoom.Utils;
 using Unity.Multiplayer.Samples.Utilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using VContainer;
 
-namespace UUnity.BossRoom.ConnectionManagement
-{
+
     /// <summary>
     /// Connection state corresponding to when the NetworkManager is shut down. From this state we can transition to the
     /// ClientConnecting sate, if starting as a client, or the StartingHost state, if starting as a host.
@@ -62,4 +58,4 @@ namespace UUnity.BossRoom.ConnectionManagement
             m_ConnectionManager.ChangeState(m_ConnectionManager.m_StartingHost.Configure(connectionMethod));
         }
     }
-}
+

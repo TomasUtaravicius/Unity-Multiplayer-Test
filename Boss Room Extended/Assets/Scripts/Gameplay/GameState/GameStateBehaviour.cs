@@ -2,8 +2,7 @@ using System;
 using UnityEngine;
 using VContainer.Unity;
 
-namespace Unity.BossRoom.Gameplay.GameState
-{
+
     public enum GameState
     {
         MainMenu,
@@ -106,4 +105,3 @@ namespace Unity.BossRoom.Gameplay.GameState
             }
         }
     }
-}

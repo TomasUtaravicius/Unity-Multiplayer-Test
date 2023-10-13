@@ -3,8 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     public class IPJoiningUI : MonoBehaviour
     {
         [SerializeField]
@@ -60,4 +59,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_JoinButton.interactable = IPUIMediator.AreIpAddressAndPortValid(m_IPInputField.text, m_PortInputField.text);
         }
     }
-}
+

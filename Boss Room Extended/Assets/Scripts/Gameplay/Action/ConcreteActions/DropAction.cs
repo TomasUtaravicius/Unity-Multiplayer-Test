@@ -1,10 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// Action for dropping "Heavy" items.
     /// </summary>
@@ -57,4 +55,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             return ActionConclusion.Continue;
         }
     }
-}
+

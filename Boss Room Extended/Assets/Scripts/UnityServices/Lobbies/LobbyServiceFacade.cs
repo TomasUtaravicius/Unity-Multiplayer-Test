@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Unity.BossRoom.Infrastructure;
 using Unity.Services.Authentication;
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
@@ -9,8 +8,6 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace Unity.BossRoom.UnityServices.Lobbies
-{
     /// <summary>
     /// An abstraction layer between the direct calls into the Lobby API and the outcomes you actually want.
     /// </summary>
@@ -542,4 +539,3 @@ namespace Unity.BossRoom.UnityServices.Lobbies
             m_UnityServiceErrorMessagePub.Publish(new UnityServiceErrorMessage("Lobby Error", reason, UnityServiceErrorMessage.Service.Lobby, e));
         }
     }
-}

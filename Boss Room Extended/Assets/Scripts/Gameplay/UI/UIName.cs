@@ -1,11 +1,9 @@
 using System;
 using TMPro;
-using Unity.BossRoom.Utils;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// UI object that visually represents an object's name. Visuals are updated when NetworkVariable is modified.
     /// </summary>
@@ -34,4 +32,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_NetworkedNameTag.OnValueChanged -= NameUpdated;
         }
     }
-}
+

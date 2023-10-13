@@ -1,7 +1,5 @@
 using System;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character.AI
-{
 
     /// <summary>
     /// Base class for all AIStates
@@ -27,4 +25,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character.AI
         public abstract void Update();
 
     }
-}
+

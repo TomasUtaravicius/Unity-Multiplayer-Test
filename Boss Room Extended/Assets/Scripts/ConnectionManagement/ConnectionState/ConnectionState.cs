@@ -1,11 +1,9 @@
 using System;
-using Unity.BossRoom.Infrastructure;
 using Unity.Netcode;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.ConnectionManagement
-{
+
     /// <summary>
     /// Base class representing a connection state.
     /// </summary>
@@ -42,4 +40,4 @@ namespace Unity.BossRoom.ConnectionManagement
 
         public virtual void OnServerStopped() { }
     }
-}
+

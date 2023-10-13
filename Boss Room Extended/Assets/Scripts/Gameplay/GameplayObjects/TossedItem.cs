@@ -1,11 +1,9 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     public class TossedItem : NetworkBehaviour
     {
         [Header("Server")]
@@ -158,4 +156,3 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
             }
         }
     }
-}

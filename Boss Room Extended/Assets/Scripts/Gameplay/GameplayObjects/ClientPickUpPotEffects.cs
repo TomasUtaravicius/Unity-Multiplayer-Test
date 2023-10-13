@@ -2,8 +2,6 @@ using System;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.Multiplayer.Samples.BossRoom.Client
-{
     /// <summary>
     /// Component to play VFX and SFX when this NetworkObject's parent NetworkObject changes to make the action look more polished.
     /// </summary>
@@ -46,4 +44,4 @@ namespace Unity.Multiplayer.Samples.BossRoom.Client
             }
         }
     }
-}
+

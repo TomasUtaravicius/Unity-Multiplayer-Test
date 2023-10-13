@@ -1,6 +1,5 @@
 using System;
 using NUnit.Framework;
-using Unity.BossRoom.Infrastructure;
 using UnityEngine;
 
 namespace Unity.BossRoom.Tests.Runtime

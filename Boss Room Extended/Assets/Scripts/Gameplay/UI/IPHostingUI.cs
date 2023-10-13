@@ -3,8 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
     public class IPHostingUI : MonoBehaviour
     {
         [SerializeField] InputField m_IPInputField;
@@ -59,4 +57,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_HostButton.interactable = IPUIMediator.AreIpAddressAndPortValid(m_IPInputField.text, m_PortInputField.text);
         }
     }
-}
+

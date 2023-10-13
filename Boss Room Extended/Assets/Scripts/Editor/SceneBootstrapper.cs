@@ -2,8 +2,6 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace Unity.BossRoom.Editor
-{
     /// <summary>
     /// Class that permits auto-loading a bootstrap scene when the editor switches play state. This class is
     /// initialized when Unity is opened and when scripts are recompiled. This is to be able to subscribe to
@@ -162,4 +160,4 @@ namespace Unity.BossRoom.Editor
             return EditorSceneManager.GetActiveScene().name.StartsWith(k_TestRunnerSceneName);
         }
     }
-}
+

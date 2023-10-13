@@ -1,19 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.UserInput;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using UnityEngine;
-using Action = Unity.BossRoom.Gameplay.Actions.Action;
-using SkillTriggerStyle = Unity.BossRoom.Gameplay.UserInput.ClientInputSender.SkillTriggerStyle;
+using static ClientInputSender;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
-    /// <summary>
-    /// Provides logic for a Hero Action Bar with attack, skill buttons and a button to open emotes panel
-    /// This bar tracks button clicks on hero action buttons for later use by ClientInputSender
-    /// </summary>
-    public class HeroActionBar : MonoBehaviour
+/// <summary>
+/// Provides logic for a Hero Action Bar with attack, skill buttons and a button to open emotes panel
+/// This bar tracks button clicks on hero action buttons for later use by ClientInputSender
+/// </summary>
+public class HeroActionBar : MonoBehaviour
     {
         [SerializeField]
         [Tooltip("The button that activates the basic action (comparable to right-clicking the mouse)")]
@@ -274,4 +268,3 @@ namespace Unity.BossRoom.Gameplay.UI
             buttonInfo.CurAction = action;
         }
     }
-}

@@ -3,8 +3,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// UI object that visually represents an object's health. Visuals are updated when NetworkVariable is modified.
     /// </summary>
@@ -38,4 +37,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_NetworkedHealth.OnValueChanged -= HealthChanged;
         }
     }
-}
+

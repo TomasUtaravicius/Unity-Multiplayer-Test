@@ -1,14 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.Actions;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.Utils;
-using Unity.BossRoom.VisualEffects;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     /// <summary>
     /// Logic that handles a physics-based projectile with a collider
     /// </summary>
@@ -241,4 +236,3 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
             }
         }
     }
-}

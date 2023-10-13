@@ -1,13 +1,9 @@
 using System;
-using Unity.BossRoom.Infrastructure;
-using Unity.BossRoom.UnityServices;
-using Unity.BossRoom.Utils;
 using Unity.Services.Lobbies;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     public class UnityServicesUIHandler : MonoBehaviour
     {
         ISubscriber<UnityServiceErrorMessage> m_ServiceErrorSubscription;
@@ -90,4 +86,4 @@ namespace Unity.BossRoom.Gameplay.UI
             m_ServiceErrorSubscription?.Unsubscribe(ServiceErrorHandler);
         }
     }
-}
+

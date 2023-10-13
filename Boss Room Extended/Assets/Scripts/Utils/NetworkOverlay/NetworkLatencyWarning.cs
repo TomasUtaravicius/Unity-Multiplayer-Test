@@ -7,8 +7,7 @@ using Unity.Netcode.Transports.UTP;
 using UnityEngine.Assertions;
 
 
-namespace Unity.BossRoom.Utils.Editor
-{
+
     public class NetworkLatencyWarning : MonoBehaviour
     {
         [SerializeField]
@@ -74,4 +73,4 @@ namespace Unity.BossRoom.Utils.Editor
             NetworkOverlay.Instance.AddTextToUI("UI Latency Warning Text", "Network Latency Enabled", out m_LatencyText);
         }
     }
-}
+

@@ -1,16 +1,11 @@
 using System;
-using Unity.BossRoom.Gameplay.Actions;
-using Unity.BossRoom.Gameplay.Configuration;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 
-namespace Unity.BossRoom.Gameplay.UserInput
-{
+
     /// <summary>
     /// Captures inputs for a character on a client and sends them to the server.
     /// </summary>
@@ -680,4 +675,4 @@ namespace Unity.BossRoom.Gameplay.UserInput
             }
         }
     }
-}
+

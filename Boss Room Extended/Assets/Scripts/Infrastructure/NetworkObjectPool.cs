@@ -5,8 +5,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Pool;
 
-namespace Unity.BossRoom.Infrastructure
-{
+
     /// <summary>
     /// Object Pool for networked objects, used for controlling how objects are spawned by Netcode. Netcode by default
     /// will allocate new memory when spawning new objects. With this Networked Pool, we're using the ObjectPool to
@@ -178,4 +177,3 @@ namespace Unity.BossRoom.Infrastructure
         }
     }
 
-}

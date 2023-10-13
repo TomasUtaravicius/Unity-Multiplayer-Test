@@ -5,8 +5,7 @@ using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
 
-namespace Unity.BossRoom.UnityServices.Lobbies
-{
+
     /// <summary>
     /// Wrapper for all the interactions with the Lobby API.
     /// </summary>
@@ -134,4 +133,3 @@ namespace Unity.BossRoom.UnityServices.Lobbies
             return await LobbyService.Instance.SubscribeToLobbyEventsAsync(lobbyId, eventCallbacks);
         }
     }
-}

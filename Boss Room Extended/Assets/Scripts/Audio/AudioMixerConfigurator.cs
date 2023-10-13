@@ -1,9 +1,8 @@
-using Unity.BossRoom.Utils;
+
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace Unity.BossRoom.Audio
-{
+
     /// <summary>
     /// Initializes the game's AudioMixer to use volumes stored in preferences. Provides
     /// a public function that can be called when these values change.
@@ -55,4 +54,4 @@ namespace Unity.BossRoom.Audio
             return Mathf.Log10(volume) * k_VolumeLog10Multiplier;
         }
     }
-}
+

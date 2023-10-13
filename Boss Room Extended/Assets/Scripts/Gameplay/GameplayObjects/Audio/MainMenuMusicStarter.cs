@@ -1,9 +1,7 @@
 using System;
-using Unity.BossRoom.Audio;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Audio
-{
+
     /// <summary>
     /// Simple class to play game theme on scene load
     /// </summary>
@@ -18,4 +16,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Audio
             ClientMusicPlayer.Instance.PlayThemeMusic(m_Restart);
         }
     }
-}
+

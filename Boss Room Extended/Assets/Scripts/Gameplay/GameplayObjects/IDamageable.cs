@@ -1,9 +1,7 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     /// <summary>
     /// Generic interface for damageable objects in the game. This includes ServerCharacter, as well as other things like
     /// ServerBreakableLogic.
@@ -49,5 +47,5 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
         /// </summary>
         bool IsDamageable();
     }
-}
+
 

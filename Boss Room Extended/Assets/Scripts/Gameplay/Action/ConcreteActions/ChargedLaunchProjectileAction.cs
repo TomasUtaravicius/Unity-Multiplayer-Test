@@ -1,10 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// A version of LaunchProjectileAction that can be "powered up" by holding down the attack key.
     /// </summary>
@@ -157,4 +155,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             return Config.Projectiles[projectileIdx];
         }
     }
-}
+

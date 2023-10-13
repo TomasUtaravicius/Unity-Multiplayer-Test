@@ -1,12 +1,9 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.Infrastructure;
 using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// Action responsible for creating a physics-based thrown object.
     /// </summary>
@@ -112,4 +109,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             }
         }
     }
-}
+

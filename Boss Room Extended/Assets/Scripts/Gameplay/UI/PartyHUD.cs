@@ -1,16 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.UserInput;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using TMPro;
-using Unity.BossRoom.Utils;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     /// <summary>
     /// Provides logic for the Party HUD with information on the player and allies
     /// Party HUD shows hero portrait and class info for all ally characters
@@ -354,4 +349,3 @@ namespace Unity.BossRoom.Gameplay.UI
             }
         }
     }
-}

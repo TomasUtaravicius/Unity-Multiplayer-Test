@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Unity.BossRoom.Infrastructure
-{
+
     public class DisposableGroup : IDisposable
     {
         readonly List<IDisposable> m_Disposables = new List<IDisposable>();
@@ -22,4 +21,4 @@ namespace Unity.BossRoom.Infrastructure
             m_Disposables.Add(disposable);
         }
     }
-}
+

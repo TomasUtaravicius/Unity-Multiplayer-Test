@@ -1,10 +1,7 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// Action that represents a swing of a melee weapon. It is not explicitly targeted, but rather detects the foe that was hit with a physics check.
     /// </summary>
@@ -121,4 +118,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             return foundFoe;
         }
     }
-}
+

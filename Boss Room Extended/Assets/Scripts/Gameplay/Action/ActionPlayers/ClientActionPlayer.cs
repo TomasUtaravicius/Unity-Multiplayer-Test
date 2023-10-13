@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// This is a companion class to ClientCharacter that is specifically responsible for visualizing Actions. Action visualizations have lifetimes
     /// and ongoing state, making this class closely analogous in spirit to the Unity.Multiplayer.Samples.BossRoom.Actions.ServerActionPlayer class.
@@ -158,6 +156,6 @@ namespace Unity.BossRoom.Gameplay.Actions
             }
         }
     }
-}
+
 
 

@@ -1,10 +1,8 @@
 using System;
-using Unity.BossRoom.UnityServices.Lobbies;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.ConnectionManagement
-{
+
     /// <summary>
     /// Connection state corresponding to a connected client. When being disconnected, transitions to the
     /// ClientReconnecting state if no reason is given, or to the Offline state.
@@ -40,4 +38,4 @@ namespace Unity.BossRoom.ConnectionManagement
             }
         }
     }
-}
+

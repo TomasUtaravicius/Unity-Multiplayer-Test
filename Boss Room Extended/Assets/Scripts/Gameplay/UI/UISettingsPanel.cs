@@ -1,11 +1,8 @@
 using System;
-using Unity.BossRoom.Audio;
-using Unity.BossRoom.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
 
     public class UISettingsPanel : MonoBehaviour
     {
@@ -45,4 +42,4 @@ namespace Unity.BossRoom.Gameplay.UI
         }
     }
 
-}
+

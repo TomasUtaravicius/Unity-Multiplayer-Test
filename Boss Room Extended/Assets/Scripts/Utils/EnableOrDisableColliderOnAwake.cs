@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace Unity.BossRoom.Utils
-{
     public class EnableOrDisableColliderOnAwake : MonoBehaviour
     {
         [SerializeField]
@@ -15,4 +13,4 @@ namespace Unity.BossRoom.Utils
             m_Collider.enabled = m_EnableStateOnAwake;
         }
     }
-}
+

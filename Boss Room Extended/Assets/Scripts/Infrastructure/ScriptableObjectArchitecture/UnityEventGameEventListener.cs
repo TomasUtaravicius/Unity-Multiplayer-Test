@@ -2,8 +2,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
 
-namespace Unity.BossRoom.Infrastructure
-{
+
     /// <summary>
     /// This class implements the IGameEventListener interface and exposes a GameEvent that we can populate within the
     /// inspector. When this GameEvent's Raise() method is fired externally, this class will invoke a UnityEvent.
@@ -39,4 +38,4 @@ namespace Unity.BossRoom.Infrastructure
             m_Response.Invoke();
         }
     }
-}
+

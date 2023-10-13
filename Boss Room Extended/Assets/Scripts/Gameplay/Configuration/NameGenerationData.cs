@@ -2,8 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Unity.BossRoom.Gameplay.Configuration
-{
+
     /// <summary>
     /// Data storage of all the valid strings used to create a player's name.
     /// Currently names are a two word combination in Adjective-Noun Combo (e.g. Happy Apple)
@@ -25,4 +24,4 @@ namespace Unity.BossRoom.Gameplay.Configuration
             return firstWord + " " + secondWord;
         }
     }
-}
+

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
 
-namespace Unity.BossRoom.UnityServices.Lobbies
-{
+
     /// <summary>
     /// A local wrapper around a lobby's remote data, with additional functionality for providing that data to UI elements and tracking local player objects.
     /// </summary>
@@ -271,4 +270,4 @@ namespace Unity.BossRoom.UnityServices.Lobbies
             AddUser(localUser);
         }
     }
-}
+

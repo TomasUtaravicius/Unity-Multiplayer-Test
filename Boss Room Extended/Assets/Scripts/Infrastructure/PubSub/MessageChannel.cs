@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.Infrastructure
-{
+
     public class MessageChannel<T> : IMessageChannel<T>
     {
         readonly List<Action<T>> m_MessageHandlers = new List<Action<T>>();
@@ -91,4 +90,4 @@ namespace Unity.BossRoom.Infrastructure
             return m_MessageHandlers.Contains(handler) && !isPendingRemoval || isPendingAdding;
         }
     }
-}
+

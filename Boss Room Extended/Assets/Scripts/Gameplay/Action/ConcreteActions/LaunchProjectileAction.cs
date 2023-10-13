@@ -1,12 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
-using Unity.BossRoom.Infrastructure;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     /// <summary>
     /// Action responsible for creating a projectile object.
     /// </summary>
@@ -104,4 +100,4 @@ namespace Unity.BossRoom.Gameplay.Actions
         }
 
     }
-}
+

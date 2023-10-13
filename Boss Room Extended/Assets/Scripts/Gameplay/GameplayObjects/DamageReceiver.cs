@@ -1,10 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     public class DamageReceiver : NetworkBehaviour, IDamageable
     {
         public event Action<ServerCharacter, int> DamageReceived;
@@ -37,4 +35,3 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
             CollisionEntered?.Invoke(other);
         }
     }
-}

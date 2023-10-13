@@ -1,15 +1,11 @@
 using System;
 using System.Text.RegularExpressions;
-using Unity.BossRoom.Gameplay.Configuration;
 using TMPro;
-using Unity.BossRoom.ConnectionManagement;
-using Unity.BossRoom.Infrastructure;
 using Unity.Networking.Transport;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     public class IPUIMediator : MonoBehaviour
     {
         public const string k_DefaultIP = "127.0.0.1";
@@ -200,4 +196,4 @@ namespace Unity.BossRoom.Gameplay.UI
             return portValid && NetworkEndpoint.TryParse(ipAddress, portNum, out var networkEndPoint);
         }
     }
-}
+

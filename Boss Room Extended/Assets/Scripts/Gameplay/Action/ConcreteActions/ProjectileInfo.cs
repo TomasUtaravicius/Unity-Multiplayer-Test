@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     [Serializable]
     public struct ProjectileInfo
     {
@@ -17,4 +16,4 @@ namespace Unity.BossRoom.Gameplay.Actions
         [Tooltip("Max number of enemies this projectile can hit before disappearing")]
         public int MaxVictims;
     }
-}
+

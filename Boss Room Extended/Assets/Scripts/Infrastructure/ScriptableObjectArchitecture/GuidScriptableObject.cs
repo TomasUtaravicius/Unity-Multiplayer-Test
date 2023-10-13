@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Unity.BossRoom.Infrastructure
-{
+
     /// <summary>
     /// ScriptableObject that stores a GUID for unique identification. The population of this field is implemented
     /// inside an Editor script.
@@ -24,4 +23,4 @@ namespace Unity.BossRoom.Infrastructure
             }
         }
     }
-}
+

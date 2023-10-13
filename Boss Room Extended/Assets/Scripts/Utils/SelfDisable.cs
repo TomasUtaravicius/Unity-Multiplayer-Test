@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace Unity.BossRoom.Utils
-{
+
     /// <summary>
     /// Will Disable this game object once active after the delay duration has passed.
     /// </summary>
@@ -24,4 +23,4 @@ namespace Unity.BossRoom.Utils
             m_DisableTimestamp = Time.time + m_DisabledDelay;
         }
     }
-}
+

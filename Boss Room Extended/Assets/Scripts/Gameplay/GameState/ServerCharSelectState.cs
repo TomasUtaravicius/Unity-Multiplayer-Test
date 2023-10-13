@@ -1,16 +1,12 @@
 using System;
 using System.Collections;
-using Unity.BossRoom.ConnectionManagement;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Infrastructure;
 using Unity.Multiplayer.Samples.BossRoom;
 using Unity.Multiplayer.Samples.Utilities;
 using Unity.Netcode;
 using UnityEngine;
 using VContainer;
 
-namespace Unity.BossRoom.Gameplay.GameState
-{
+
     /// <summary>
     /// Server specialization of Character Select game state.
     /// </summary>
@@ -321,4 +317,3 @@ namespace Unity.BossRoom.Gameplay.GameState
             }
         }
     }
-}

@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace Unity.BossRoom.Audio
-{
+
     /// <summary>
     /// Music player that handles start of boss battle, victory and restart
     /// </summary>
@@ -67,4 +66,4 @@ namespace Unity.BossRoom.Audio
             Instance = this;
         }
     }
-}
+

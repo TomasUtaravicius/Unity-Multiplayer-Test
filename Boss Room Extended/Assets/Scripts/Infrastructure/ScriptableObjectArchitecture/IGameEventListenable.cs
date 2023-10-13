@@ -1,5 +1,5 @@
-namespace Unity.BossRoom.Infrastructure
-{
+
+
     /// <summary>
     /// This class is designed to work hand in hand with the GameEvent class, which is a ScriptableObject container
     /// for an event. IGameEventListener declares a GameEvent, which is to be defined by the implementing class. The
@@ -12,4 +12,4 @@ namespace Unity.BossRoom.Infrastructure
 
         public void EventRaised();
     }
-}
+

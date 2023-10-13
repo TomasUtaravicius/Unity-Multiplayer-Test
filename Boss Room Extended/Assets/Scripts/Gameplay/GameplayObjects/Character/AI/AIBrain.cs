@@ -1,11 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.Configuration;
-using Unity.BossRoom.Gameplay.Actions;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character.AI
-{
     /// <summary>
     /// Handles enemy AI. Contains AIStateLogics that handle some of the details,
     /// and has various utility functions that are called by those AIStateLogics
@@ -175,4 +171,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character.AI
         }
 
     }
-}
+

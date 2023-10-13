@@ -2,8 +2,6 @@ using System;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
-{
     /// <summary>
     /// Client-side component that awaits a state change on an avatar's Guid, and fetches matching Avatar from the
     /// AvatarRegistry, if possible. Once fetched, the Graphics GameObject is spawned.
@@ -47,4 +45,4 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             AvatarGraphicsSpawned?.Invoke(m_GraphicsAnimator.gameObject);
         }
     }
-}
+

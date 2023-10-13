@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.Configuration
-{
+
     /// <summary>
     /// Describes how a specific character visualization should be animated.
     /// </summary>
@@ -79,4 +78,4 @@ namespace Unity.BossRoom.Gameplay.Configuration
             BaseNodeTagID = Animator.StringToHash(m_BaseNodeTag);
         }
     }
-}
+

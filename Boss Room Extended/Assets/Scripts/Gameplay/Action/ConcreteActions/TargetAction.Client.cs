@@ -1,13 +1,8 @@
 using System;
-using Unity.BossRoom.Gameplay.UserInput;
-using Unity.BossRoom.Gameplay.GameplayObjects;
-using Unity.BossRoom.Gameplay.GameplayObjects.Character;
 using Unity.Netcode;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
     public partial class TargetAction
     {
         private GameObject m_TargetReticule;
@@ -107,4 +102,3 @@ namespace Unity.BossRoom.Gameplay.Actions
             }
         }
     }
-}

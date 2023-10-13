@@ -2,8 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
+
     public class QualityButton : MonoBehaviour
     {
         [SerializeField]
@@ -32,6 +31,6 @@ namespace Unity.BossRoom.Gameplay.UI
             }
         }
     }
-}
+
 
 

@@ -1,10 +1,7 @@
 using System;
-using Unity.BossRoom.Gameplay.Configuration;
-using Unity.BossRoom.Utils;
 using Unity.Netcode;
 
-namespace Unity.BossRoom.Gameplay.GameState
-{
+
     /// <summary>
     /// Common data and RPCs for the CharSelect stage.
     /// </summary>
@@ -111,4 +108,4 @@ namespace Unity.BossRoom.Gameplay.GameState
             OnClientChangedSeat?.Invoke(clientId, seatIdx, lockedIn);
         }
     }
-}
+

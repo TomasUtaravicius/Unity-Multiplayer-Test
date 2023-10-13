@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.Navigation
-{
     /// <summary>
     /// This system exists to coordinate path finding and navigation functionality in a scene.
     /// The Unity NavMesh is only used to calculate navigation paths. Moving along those paths is done by this system.
@@ -46,4 +44,4 @@ namespace Unity.BossRoom.Navigation
             Assert.AreEqual(NavigationSystemTag, tag, $"The GameObject of the {nameof(NavigationSystem)} component has to use the {NavigationSystem.NavigationSystemTag} tag!");
         }
     }
-}
+

@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace Unity.BossRoom.VisualEffects
-{
+
     /// <summary>
     /// This script randomly varies a light source to create a flickering effect.
     /// </summary>
@@ -60,4 +59,4 @@ namespace Unity.BossRoom.VisualEffects
             UpdateNoiseBuffer();
         }
     }
-}
+

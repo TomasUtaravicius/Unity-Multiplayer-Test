@@ -3,8 +3,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.Rendering;
 
-namespace Unity.BossRoom.Editor
-{
+
     /// <summary>
     /// This is a script that creates a menu for baking lights (and changing other lighting features) for Boss Room.
     /// </summary>
@@ -116,4 +115,4 @@ namespace Unity.BossRoom.Editor
             Debug.Log("All lights (except for area lights) and reflection probes in scene set to Realtime");
         }
     }
-}
+

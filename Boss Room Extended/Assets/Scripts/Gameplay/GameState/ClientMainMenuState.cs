@@ -1,9 +1,4 @@
 using System;
-using Unity.BossRoom.Gameplay.Configuration;
-using Unity.BossRoom.Gameplay.UI;
-using Unity.BossRoom.UnityServices.Auth;
-using Unity.BossRoom.UnityServices.Lobbies;
-using Unity.BossRoom.Utils;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using UnityEngine;
@@ -11,8 +6,6 @@ using UnityEngine.UI;
 using VContainer;
 using VContainer.Unity;
 
-namespace Unity.BossRoom.Gameplay.GameState
-{
     /// <summary>
     /// Game Logic that runs when sitting at the MainMenu. This is likely to be "nothing", as no game has been started. But it is
     /// nonetheless important to have a game state, as the GameStateBehaviour system requires that all scenes have states.
@@ -157,4 +150,3 @@ namespace Unity.BossRoom.Gameplay.GameState
             m_UIProfileSelector.Show();
         }
     }
-}

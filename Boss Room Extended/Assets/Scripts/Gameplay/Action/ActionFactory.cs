@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.GameplayObjects;
 using UnityEngine.Pool;
 using Object = UnityEngine.Object;
 
-namespace Unity.BossRoom.Gameplay.Actions
-{
+
     public static class ActionFactory
     {
         private static Dictionary<ActionID, ObjectPool<Action>> s_ActionPools = new Dictionary<ActionID, ObjectPool<Action>>();
@@ -52,4 +50,4 @@ namespace Unity.BossRoom.Gameplay.Actions
             }
         }
     }
-}
+

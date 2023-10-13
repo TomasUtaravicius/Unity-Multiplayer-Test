@@ -1,8 +1,6 @@
 using System;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.GameState
-{
     public enum WinState
     {
         Invalid,
@@ -27,4 +25,4 @@ namespace Unity.BossRoom.Gameplay.GameState
             WinState = WinState.Invalid;
         }
     }
-}
+

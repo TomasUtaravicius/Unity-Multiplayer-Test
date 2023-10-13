@@ -5,8 +5,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Unity.BossRoom.Gameplay.GameplayObjects
-{
+
     /// <summary>
     /// ServerEnemyPortal is a stationary dungeon element that spawns monsters when a player is
     /// nearby. It has one or more "breakable bits". When all the breakable elements are broken,
@@ -147,5 +146,3 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
 #endif
     }
 
-
-}

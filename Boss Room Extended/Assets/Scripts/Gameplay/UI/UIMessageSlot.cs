@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Unity.BossRoom.Gameplay.UI
-{
     public class UIMessageSlot : MonoBehaviour
     {
         [SerializeField]
@@ -42,4 +40,4 @@ namespace Unity.BossRoom.Gameplay.UI
             }
         }
     }
-}
+

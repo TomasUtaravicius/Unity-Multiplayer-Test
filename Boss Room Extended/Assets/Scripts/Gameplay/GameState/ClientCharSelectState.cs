@@ -1,16 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Unity.BossRoom.Gameplay.UI;
 using TMPro;
-using Unity.BossRoom.ConnectionManagement;
 using Unity.Multiplayer.Samples.Utilities;
 using Unity.Netcode;
 using UnityEngine;
 using VContainer;
-using Avatar = Unity.BossRoom.Gameplay.Configuration.Avatar;
 
-namespace Unity.BossRoom.Gameplay.GameState
-{
     /// <summary>
     /// Client specialization of the Character Select game state. Mainly controls the UI during character-select.
     /// </summary>
@@ -444,4 +439,3 @@ namespace Unity.BossRoom.Gameplay.GameState
         }
 
     }
-}
