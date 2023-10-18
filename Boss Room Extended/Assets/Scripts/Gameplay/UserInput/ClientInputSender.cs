@@ -8,7 +8,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
-
+using Unity.BossRoom.CameraUtils;
+//using Kaimutas.CameraUtils;
 namespace Unity.BossRoom.Gameplay.UserInput
 {
     /// <summary>
@@ -38,9 +39,11 @@ namespace Unity.BossRoom.Gameplay.UserInput
         const float k_MaxNavMeshDistance = 1f;
 
         RaycastHitComparer m_RaycastHitComparer;
-
+        
         [SerializeField]
         ServerCharacter m_ServerCharacter;
+
+        CharacterCameraController cameraController;
 
         //public CharacterCameraController Character;
         //public ExampleCharacterCamera CharacterCamera;
@@ -102,7 +105,11 @@ namespace Unity.BossRoom.Gameplay.UserInput
         int m_ActionRequestCount;
 
         BaseActionInput m_CurrentSkillInput;
+
+        //Character movement inputs
         Vector3 m_MovementInput;
+        bool m_Jump;
+        bool m_Crouch;
         bool m_MoveRequest;
 
         Camera m_MainCamera;
@@ -130,9 +137,25 @@ namespace Unity.BossRoom.Gameplay.UserInput
         void Awake()
         {
             m_MainCamera = Camera.main;
-            m_MovementInput = Vector2.zero;
+            cameraController = m_MainCamera.GetComponent<CharacterCameraController>();
+
+            m_MovementInput = Vector3.zero;
+            m_Jump = false;
+            m_Crouch = false;
+            CameraSetup();
         }
 
+        void CameraSetup()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+
+            // Tell camera to follow transform
+            cameraController.SetFollowTransform(this.gameObject.transform);
+
+            // Ignore the character's collider(s) for camera obstruction checks
+            cameraController.IgnoredColliders.Clear();
+            //cameraController.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
+        }
         public override void OnNetworkSpawn()
         {
             if (!IsClient || !IsOwner)
@@ -267,56 +290,19 @@ namespace Unity.BossRoom.Gameplay.UserInput
                     m_LastSentMove = Time.time;
 
 
-                    Vector3 cameraForward = Camera.main.transform.forward;
+                    /*Vector3 cameraForward = Camera.main.transform.forward;
                     Vector3 cameraRight = Camera.main.transform.right;
                     cameraForward.y = 0f;
                     cameraRight.y = 0f;
                     cameraForward.Normalize();
                     cameraRight.Normalize();
 
-                    Vector3 moveDirection = cameraForward * m_MovementInput.z + cameraRight * m_MovementInput.x;
+                    Vector3 moveDirection = cameraForward * m_MovementInput.z + cameraRight * m_MovementInput.x;*/
 
-                    m_ServerCharacter.SendCharacterMovementInputServerRpc(moveDirection);
+                    // Apply inputs to character
+                    m_ServerCharacter.SendCharacterMovementInputServerRpc(m_MovementInput, cameraController.Transform.rotation, m_Jump,m_Crouch);
                 }
             }
-
-            //Click based movement
-           /* if (m_MoveRequest)
-            {
-                
-                m_MoveRequest = false;
-                if ((Time.time - m_LastSentMove) > k_MoveSendRateSeconds)
-                {
-                    m_LastSentMove = Time.time;
-                    var ray = m_MainCamera.ScreenPointToRay(UnityEngine.Input.mousePosition);
-
-                    var groundHits = Physics.RaycastNonAlloc(ray,
-                        k_CachedHit,
-                        k_MouseInputRaycastDistance,
-                        m_GroundLayerMask);
-
-                    if (groundHits > 0)
-                    {
-                        if (groundHits > 1)
-                        {
-                            // sort hits by distance
-                            Array.Sort(k_CachedHit, 0, groundHits, m_RaycastHitComparer);
-                        }
-
-                        // verify point is indeed on navmesh surface
-                        if (NavMesh.SamplePosition(k_CachedHit[0].point,
-                                out var hit,
-                                k_MaxNavMeshDistance,
-                                NavMesh.AllAreas))
-                        {
-                            m_ServerCharacter.SendCharacterInputServerRpc(hit.position);
-
-                            //Send our client only click request
-                            ClientMoveEvent?.Invoke(hit.position);
-                        }
-                    }
-                }
-            }*/
         }
 
         /// <summary>
@@ -511,6 +497,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
 
         void Update()
         {
+            
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 RequestAction(actionState1.actionID, SkillTriggerStyle.Keyboard);
@@ -552,12 +539,8 @@ namespace Unity.BossRoom.Gameplay.UserInput
             {
                 RequestAction(GameDataSource.Instance.Emote4ActionPrototype.ActionID, SkillTriggerStyle.Keyboard);
             }
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
-
-            m_MovementInput = new Vector3(horizontalInput,0, verticalInput);
-
-                m_MoveRequest = true;
+            HandleCharacterMovementInput();
+            
             
             if (!EventSystem.current.IsPointerOverGameObject() && m_CurrentSkillInput == null)
             {
@@ -578,6 +561,46 @@ namespace Unity.BossRoom.Gameplay.UserInput
                     m_MoveRequest = true;
                 }
             }
+        }
+        private void LateUpdate()
+        {
+            HandleCameraInput();
+        }
+        void HandleCharacterMovementInput()
+        {
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+
+            m_MovementInput = new Vector3(horizontalInput, 0, verticalInput);
+
+            //characterInputs.CrouchDown = Input.GetKeyDown(KeyCode.C);
+            //characterInputs.CrouchUp = Input.GetKeyUp(KeyCode.C);
+            m_Jump = Input.GetKey(KeyCode.Space);
+
+            m_MoveRequest = true;
+        }
+        void HandleCameraInput()
+        {
+            // Create the look input vector for the camera
+            float mouseLookAxisUp = Input.GetAxisRaw(MouseYInput);
+            float mouseLookAxisRight = Input.GetAxisRaw(MouseXInput);
+            Vector3 lookInputVector = new Vector3(mouseLookAxisRight, mouseLookAxisUp, 0f);
+
+            // Prevent moving the camera while the cursor isn't locked
+            if (Cursor.lockState != CursorLockMode.Locked)
+            {
+                lookInputVector = Vector3.zero;
+            }
+
+            // Input for zooming the camera (disabled in WebGL because it can cause problems)
+            float scrollInput = -Input.GetAxis(MouseScrollInput);
+#if UNITY_WEBGL
+        scrollInput = 0f;
+#endif
+
+            // Apply inputs to the camera
+            cameraController.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
+
         }
         /*private void LateUpdate()
         {

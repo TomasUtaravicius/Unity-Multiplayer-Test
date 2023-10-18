@@ -6,6 +6,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Assertions;
+using KinematicCharacterController;
 
 namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
 {
@@ -32,7 +33,8 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
 
         [SerializeField]
         CharacterController m_CharacterController;
-
+        [SerializeField]
+        ExampleCharacterController m_KinematicCharacterController;
         [SerializeField]
         Rigidbody m_Rigidbody;
 
@@ -54,7 +56,12 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         private float m_ForcedSpeed;
         private float m_SpecialModeDurationRemaining;
 
-        private Vector3 m_movementInput;
+
+        // Character inputs
+        private Vector3 m_MovementInput;
+        private Quaternion m_CameraInput;
+        private bool m_JumpInput;
+        private bool m_CrouchInput;
 
         // this one is specific to knockback mode
         private Vector3 m_KnockbackVector;
@@ -66,12 +73,12 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
 
         public bool SpeedCheatActivated { get; set; }
 #endif
-
+        //Example
         void Awake()
         {
             // disable this NetworkBehavior until it is spawned
             enabled = false;
-            m_movementInput = Vector3.zero;
+            m_MovementInput = Vector3.zero;
         }
 
         public override void OnNetworkSpawn()
@@ -105,12 +112,16 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             m_MovementState = MovementState.PathFollowing;
             m_NavPath.SetTargetPosition(position);
         }
-        public void SetMovementInput(Vector3 movement)
+        public void SetMovementInput(Vector3 movement, Quaternion camera, bool jump, bool crouch)
         {
             if (m_Animator.GetBool("IsInteracting"))
                 return;
+
             m_MovementState = MovementState.PathFollowing;
-            m_movementInput = movement;
+            m_MovementInput = movement;
+            m_CameraInput = camera;
+            m_JumpInput = jump;
+            m_CrouchInput = crouch;
         }
 
         public void StartForwardCharge(float speed, float duration)
@@ -222,7 +233,11 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             {
                 // Disable server components when despawning
                 enabled = false;
-                m_NavMeshAgent.enabled = false;
+                if(isNPC)
+                {
+                    m_NavMeshAgent.enabled = false;
+                }
+                
             }
         }
         public void PerformInteractiveMovement(Vector3 movementVector)
@@ -271,7 +286,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             {
                 if(!isNPC)
                 {
-                    movementVector = new Vector3(m_movementInput.x, 0.0f, m_movementInput.z);
+                    movementVector = new Vector3(m_MovementInput.x, 0.0f, m_MovementInput.z);
                     // Normalize the movement direction to ensure consistent speed in all directions
                     movementVector *= GetBaseMovementSpeed() * Time.fixedDeltaTime;
 
@@ -279,6 +294,21 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                     {
                         movementVector.Normalize();
                     }
+
+                    m_KinematicCharacterController.MaxStableMoveSpeed = GetBaseMovementSpeed();
+
+                    PlayerCharacterInputs characterInputs = new PlayerCharacterInputs();
+
+                    // Build the CharacterInputs struct
+                    characterInputs.MoveAxisForward = m_MovementInput.z;
+                    characterInputs.MoveAxisRight = m_MovementInput.x;
+                    characterInputs.CameraRotation = m_CameraInput;
+                    Debug.Log("JUMP INPUT IS: " + m_JumpInput);
+                    characterInputs.JumpDown = m_JumpInput;
+                    characterInputs.CrouchDown = false;
+                    characterInputs.CrouchUp = false;
+
+                    m_KinematicCharacterController.SetInputs(ref characterInputs);
 
                     // If we didn't move stop moving.
                     if (movementVector == Vector3.zero)
@@ -325,13 +355,17 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             
 
             // Apply the desired movement speed
-           
-            // Move the character using Character Controller
-            m_CharacterController.Move(movementVector);
-            transform.rotation = Quaternion.LookRotation(movementVector);
-            // After moving adjust the position of the dynamic rigidbody.
-            m_Rigidbody.position = transform.position;
-            m_Rigidbody.rotation = transform.rotation;
+
+            if(isNPC)
+            {
+                // Move the character using Character Controller
+                m_CharacterController.Move(movementVector);
+                transform.rotation = Quaternion.LookRotation(movementVector);
+                // After moving adjust the position of the dynamic rigidbody.
+                m_Rigidbody.position = transform.position;
+                m_Rigidbody.rotation = transform.rotation;
+            }
+            
         }
 
         /// <summary>

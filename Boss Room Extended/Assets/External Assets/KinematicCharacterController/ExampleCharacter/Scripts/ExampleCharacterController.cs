@@ -4,8 +4,6 @@ using UnityEngine;
 using KinematicCharacterController;
 using System;
 
-namespace KinematicCharacterController.Examples
-{
     public enum CharacterState
     {
         Default,
@@ -43,7 +41,7 @@ namespace KinematicCharacterController.Examples
     public class ExampleCharacterController : MonoBehaviour, ICharacterController
     {
         public KinematicCharacterMotor Motor;
-
+        //public ServerAnimatorHandler 
         [Header("Stable Movement")]
         public float MaxStableMoveSpeed = 10f;
         public float StableMovementSharpness = 15f;
@@ -514,4 +512,4 @@ namespace KinematicCharacterController.Examples
         {
         }
     }
-}
+

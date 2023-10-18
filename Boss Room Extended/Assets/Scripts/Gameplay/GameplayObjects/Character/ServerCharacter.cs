@@ -209,7 +209,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         }
 
         [ServerRpc]
-        public void SendCharacterMovementInputServerRpc(Vector3 movementInput)
+        public void SendCharacterMovementInputServerRpc(Vector3 movementInput, Quaternion cameraRotation, bool jump, bool crouch)
         {
             if (LifeState == LifeState.Alive && !m_Movement.IsPerformingForcedMovement())
             {
@@ -223,7 +223,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                 }
 
                 m_ServerActionPlayer.CancelRunningActionsByLogic(ActionLogic.Target, true); //clear target on move.
-                m_Movement.SetMovementInput(new Vector3(movementInput.x, movementInput.y, movementInput.z));
+                m_Movement.SetMovementInput(movementInput, cameraRotation, jump, crouch);
             }
         }
 

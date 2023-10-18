@@ -1,10 +1,8 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace KinematicCharacterController.Examples
-{
     public class ExampleCharacterCamera : MonoBehaviour
     {
         [Header("Framing")]
@@ -176,4 +174,3 @@ namespace KinematicCharacterController.Examples
             }
         }
     }
-}
