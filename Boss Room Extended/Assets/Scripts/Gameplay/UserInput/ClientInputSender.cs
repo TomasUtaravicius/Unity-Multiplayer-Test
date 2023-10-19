@@ -43,7 +43,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
         [SerializeField]
         ServerCharacter m_ServerCharacter;
 
-        CharacterCameraController cameraController;
+        //CharacterCameraController cameraController;
 
         //public CharacterCameraController Character;
         //public ExampleCharacterCamera CharacterCamera;
@@ -137,12 +137,12 @@ namespace Unity.BossRoom.Gameplay.UserInput
         void Awake()
         {
             m_MainCamera = Camera.main;
-            cameraController = m_MainCamera.GetComponent<CharacterCameraController>();
+           // cameraController = m_MainCamera.GetComponent<CharacterCameraController>();
 
             m_MovementInput = Vector3.zero;
             m_Jump = false;
             m_Crouch = false;
-            CameraSetup();
+          //  CameraSetup();
         }
 
         void CameraSetup()
@@ -150,10 +150,10 @@ namespace Unity.BossRoom.Gameplay.UserInput
             Cursor.lockState = CursorLockMode.Locked;
 
             // Tell camera to follow transform
-            cameraController.SetFollowTransform(this.gameObject.transform);
+           // cameraController.SetFollowTransform(this.gameObject.transform);
 
             // Ignore the character's collider(s) for camera obstruction checks
-            cameraController.IgnoredColliders.Clear();
+           // cameraController.IgnoredColliders.Clear();
             //cameraController.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
         }
         public override void OnNetworkSpawn()
@@ -300,9 +300,10 @@ namespace Unity.BossRoom.Gameplay.UserInput
                     Vector3 moveDirection = cameraForward * m_MovementInput.z + cameraRight * m_MovementInput.x;*/
 
                     // Apply inputs to character
-                    m_ServerCharacter.SendCharacterMovementInputServerRpc(m_MovementInput, cameraController.Transform.rotation, m_Jump,m_Crouch);
+                    m_ServerCharacter.SendCharacterMovementInputServerRpc(m_MovementInput, Camera.main.transform.rotation, m_Jump,m_Crouch);
                 }
             }
+           // HandleCameraInput();
         }
 
         /// <summary>
@@ -564,7 +565,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
         }
         private void LateUpdate()
         {
-            HandleCameraInput();
+            
         }
         void HandleCharacterMovementInput()
         {
@@ -599,7 +600,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
 #endif
 
             // Apply inputs to the camera
-            cameraController.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
+           // cameraController.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
 
         }
         /*private void LateUpdate()

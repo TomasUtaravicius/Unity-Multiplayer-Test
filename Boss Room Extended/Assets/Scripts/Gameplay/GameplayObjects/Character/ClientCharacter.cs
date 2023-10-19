@@ -159,7 +159,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                 {
                     ActionRequestData data = new ActionRequestData { ActionID = GameDataSource.Instance.GeneralTargetActionPrototype.ActionID };
                     m_ClientActionViz.PlayAction(ref data);
-                    //gameObject.AddComponent<CameraController>();
+                    gameObject.AddComponent<CameraController>();
 
                     if (m_ServerCharacter.TryGetComponent(out ClientInputSender inputSender))
                     {

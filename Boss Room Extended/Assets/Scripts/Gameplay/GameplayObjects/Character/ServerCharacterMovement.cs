@@ -34,7 +34,9 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         [SerializeField]
         CharacterController m_CharacterController;
         [SerializeField]
-        ExampleCharacterController m_KinematicCharacterController;
+        KinematicCharacterController m_KinematicCharacterController;
+        [SerializeField]
+        KinematicCharacterMotor m_KinematicMotor;
         [SerializeField]
         Rigidbody m_Rigidbody;
 
@@ -78,6 +80,8 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         {
             // disable this NetworkBehavior until it is spawned
             enabled = false;
+            m_KinematicMotor.enabled = false;
+            m_KinematicCharacterController.enabled = false;
             m_MovementInput = Vector3.zero;
         }
 
@@ -87,9 +91,12 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             {
                 // Only enable server component on servers
                 enabled = true;
-
+                m_KinematicMotor.enabled = true;
+                m_KinematicCharacterController.enabled = true;
                 // On the server enable navMeshAgent and initialize
                 m_NavMeshAgent.enabled = true;
+               
+                Debug.Log("Enabling stuff");
                 m_NavigationSystem = GameObject.FindGameObjectWithTag(NavigationSystem.NavigationSystemTag).GetComponent<NavigationSystem>();
                 m_NavPath = new DynamicNavPath(m_NavMeshAgent, m_NavigationSystem);
             }
@@ -297,19 +304,22 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
 
                     m_KinematicCharacterController.MaxStableMoveSpeed = GetBaseMovementSpeed();
 
-                    PlayerCharacterInputs characterInputs = new PlayerCharacterInputs();
+                     PlayerCharacterInputs characterInputs = new PlayerCharacterInputs();
 
-                    // Build the CharacterInputs struct
-                    characterInputs.MoveAxisForward = m_MovementInput.z;
-                    characterInputs.MoveAxisRight = m_MovementInput.x;
-                    characterInputs.CameraRotation = m_CameraInput;
-                    Debug.Log("JUMP INPUT IS: " + m_JumpInput);
-                    characterInputs.JumpDown = m_JumpInput;
-                    characterInputs.CrouchDown = false;
-                    characterInputs.CrouchUp = false;
+                     // Build the CharacterInputs struct
+                     characterInputs.MoveAxisForward = m_MovementInput.z;
+                     characterInputs.MoveAxisRight = m_MovementInput.x;
+                     characterInputs.CameraRotation = m_CameraInput;
+                     characterInputs.JumpDown = m_JumpInput;
+                     characterInputs.CrouchDown = false;
+                     characterInputs.CrouchUp = false;
 
-                    m_KinematicCharacterController.SetInputs(ref characterInputs);
-
+                     m_KinematicCharacterController.SetInputs(ref characterInputs);
+                    // m_CharacterController.Move(movementVector);
+                    // transform.rotation = Quaternion.LookRotation(movementVector);
+                    // After moving adjust the position of the dynamic rigidbody.
+                    // m_Rigidbody.position = transform.position;
+                    // m_Rigidbody.rotation = transform.rotation;
                     // If we didn't move stop moving.
                     if (movementVector == Vector3.zero)
                     {

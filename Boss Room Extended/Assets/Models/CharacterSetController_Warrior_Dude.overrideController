@@ -7,14 +7,8 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CharacterSetController_Warrior_Dude
-  m_Controller: {fileID: 9100000, guid: 81ba9d484ee6d174a8aeb3af411babc4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 995b5a8014cf49345873dcb42fdc895d, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 1827226128182048838, guid: 2115c4661f55eff45a5a0f91fc0a12f0, type: 3}
-    m_OverrideClip: {fileID: -3100369314251171874, guid: 65aceb821688847449cbad8f6eb6241d, type: 3}
-  - m_OriginalClip: {fileID: 6200578666267062213, guid: 2115c4661f55eff45a5a0f91fc0a12f0, type: 3}
-    m_OverrideClip: {fileID: 3898671758408027237, guid: b09d851b76d92f144abcea300e30fa58, type: 3}
-  - m_OriginalClip: {fileID: -3419257869308726280, guid: 2115c4661f55eff45a5a0f91fc0a12f0, type: 3}
-    m_OverrideClip: {fileID: -6337207191384161919, guid: 7d569195caea6364689fa56fa5f0e7c5, type: 3}
   - m_OriginalClip: {fileID: -3649224233829801637, guid: 2115c4661f55eff45a5a0f91fc0a12f0, type: 3}
     m_OverrideClip: {fileID: -5094302435108064826, guid: 14ac9e875272fc34ab3fa7a3273a83ae, type: 3}
   - m_OriginalClip: {fileID: -6239216113759591374, guid: 2115c4661f55eff45a5a0f91fc0a12f0, type: 3}
