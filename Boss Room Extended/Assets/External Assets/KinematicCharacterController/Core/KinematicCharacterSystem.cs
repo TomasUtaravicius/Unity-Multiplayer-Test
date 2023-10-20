@@ -35,7 +35,7 @@ namespace KinematicCharacterController
                 _instance.hideFlags = HideFlags.NotEditable;
 
                 Settings = ScriptableObject.CreateInstance<KCCSettings>();
-
+                Settings.Interpolate = false;
                 GameObject.DontDestroyOnLoad(systemGameObject);
             }
         }

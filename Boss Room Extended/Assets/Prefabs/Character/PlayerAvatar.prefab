@@ -223,13 +223,6 @@ MonoBehaviour:
     TriggerNameHash: 1369095871
     TransitionIndex: 1
   - IsCrossFadeExit: 0
-    Layer: 0
-    OriginatingState: 137525990
-    DestinationState: 125937960
-    TransitionDuration: 0.25
-    TriggerNameHash: 125937960
-    TransitionIndex: 1
-  - IsCrossFadeExit: 0
     Layer: 1
     OriginatingState: -309020853
     DestinationState: -47317214
@@ -765,8 +758,8 @@ MonoBehaviour:
   AirAccelerationSpeed: 7
   Drag: 0.1
   AllowJumpingWhenSliding: 0
-  JumpUpSpeed: 7
-  JumpScalableForwardSpeed: 7
+  JumpUpSpeed: 9
+  JumpScalableForwardSpeed: 3
   JumpPreGroundingGraceTime: 0
   JumpPostGroundingGraceTime: 0
   IgnoredColliders: []

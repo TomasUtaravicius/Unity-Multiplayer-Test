@@ -315,11 +315,12 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                      characterInputs.CrouchUp = false;
 
                      m_KinematicCharacterController.SetInputs(ref characterInputs);
+                     m_Rigidbody.position = transform.position;
+                     m_Rigidbody.rotation = transform.rotation;
                     // m_CharacterController.Move(movementVector);
                     // transform.rotation = Quaternion.LookRotation(movementVector);
                     // After moving adjust the position of the dynamic rigidbody.
-                    // m_Rigidbody.position = transform.position;
-                    // m_Rigidbody.rotation = transform.rotation;
+
                     // If we didn't move stop moving.
                     if (movementVector == Vector3.zero)
                     {
