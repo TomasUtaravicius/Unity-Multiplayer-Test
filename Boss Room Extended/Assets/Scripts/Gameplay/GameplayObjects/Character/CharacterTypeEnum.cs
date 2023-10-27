@@ -18,6 +18,8 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         Imp,
         ImpBoss,
         VandalImp,
-        Warrior
+
+        //Character classes
+        Battlemaster
     }
 }
