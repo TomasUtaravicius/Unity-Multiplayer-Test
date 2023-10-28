@@ -1,8 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
+#if UNITY_EDITOR
 namespace KinematicCharacterController
 {
     [CustomEditor(typeof(KinematicCharacterMotor))]
@@ -26,3 +29,4 @@ namespace KinematicCharacterController
         }
     }
 }
+#endif

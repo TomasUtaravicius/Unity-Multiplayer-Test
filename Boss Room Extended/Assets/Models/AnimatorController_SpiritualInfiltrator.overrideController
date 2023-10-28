@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AnimatorController_SpiritualInfiltrator
+  m_Controller: {fileID: 9100000, guid: 995b5a8014cf49345873dcb42fdc895d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -3649224233829801637, guid: 2115c4661f55eff45a5a0f91fc0a12f0, type: 3}
+    m_OverrideClip: {fileID: -5094302435108064826, guid: 14ac9e875272fc34ab3fa7a3273a83ae, type: 3}
+  - m_OriginalClip: {fileID: -6239216113759591374, guid: 2115c4661f55eff45a5a0f91fc0a12f0, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: ab826e78793aa5e4492c094acd011506, type: 2}
+  - m_OriginalClip: {fileID: -5612658629409835226, guid: 2115c4661f55eff45a5a0f91fc0a12f0, type: 3}
+    m_OverrideClip: {fileID: 381366046490202241, guid: ee5e404da5ae61d4291af7340ab39b19, type: 3}

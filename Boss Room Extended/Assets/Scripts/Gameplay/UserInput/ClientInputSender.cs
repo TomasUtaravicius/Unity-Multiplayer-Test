@@ -288,18 +288,6 @@ namespace Unity.BossRoom.Gameplay.UserInput
                 if ((Time.time - m_LastSentMove) > k_MoveSendRateSeconds)
                 {
                     m_LastSentMove = Time.time;
-
-
-                    /*Vector3 cameraForward = Camera.main.transform.forward;
-                    Vector3 cameraRight = Camera.main.transform.right;
-                    cameraForward.y = 0f;
-                    cameraRight.y = 0f;
-                    cameraForward.Normalize();
-                    cameraRight.Normalize();
-
-                    Vector3 moveDirection = cameraForward * m_MovementInput.z + cameraRight * m_MovementInput.x;*/
-
-                    // Apply inputs to character
                     m_ServerCharacter.SendCharacterMovementInputServerRpc(m_MovementInput, Camera.main.transform.rotation, m_Jump,m_Crouch);
                 }
             }
@@ -314,6 +302,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
         /// <param name="targetId">(optional) Pass in a specific networkID to target for this action</param>
         void PerformSkill(ActionID actionID, SkillTriggerStyle triggerStyle, ulong targetId = 0)
         {
+            Debug.Log("Perform skill playing");
             Transform hitTransform = null;
             if (targetId != 0)
             {
@@ -498,7 +487,11 @@ namespace Unity.BossRoom.Gameplay.UserInput
 
         void Update()
         {
-            
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                RequestAction(actionState1.actionID, SkillTriggerStyle.Keyboard);
+            }
+
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 RequestAction(actionState1.actionID, SkillTriggerStyle.Keyboard);
@@ -548,7 +541,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
                 //IsPointerOverGameObject() is a simple way to determine if the mouse is over a UI element. If it is, we don't perform mouse input logic,
                 //to model the button "blocking" mouse clicks from falling through and interacting with the world.
 
-                if (Input.GetMouseButtonDown(1))
+             /*   if (Input.GetMouseButtonDown(1))
                 {
                     RequestAction(CharacterClass.Skill1.ActionID, SkillTriggerStyle.MouseClick);
                 }
@@ -560,7 +553,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
                 else if (Input.GetMouseButton(0))
                 {
                     m_MoveRequest = true;
-                }
+                }*/
             }
         }
         private void LateUpdate()

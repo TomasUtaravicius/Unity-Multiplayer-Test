@@ -163,9 +163,13 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         /// <param name="followTransform">The transform to follow</param>
         public void FollowTransform(Transform followTransform)
         {
-            Debug.Log("Setting Movement state to PathFollowing");
-            m_MovementState = MovementState.PathFollowing;
-            m_NavPath.FollowTransform(followTransform);
+            if(isNPC)
+            {
+                Debug.Log("Setting Movement state to PathFollowing");
+                m_MovementState = MovementState.PathFollowing;
+                m_NavPath.FollowTransform(followTransform);
+            }
+            
         }
 
         /// <summary>
@@ -249,7 +253,34 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         }
         public void PerformInteractiveMovement(Vector3 movementVector)
         {
-            m_CharacterController.Move(movementVector);
+
+            m_KinematicCharacterController.MaxStableMoveSpeed = 50f;
+            m_KinematicCharacterController.StableMovementSharpness = 50f;
+            m_KinematicCharacterController.OrientationSharpness = 50f;
+            PlayerCharacterInputs characterInputs = new PlayerCharacterInputs();
+
+            // Build the CharacterInputs struct
+
+            /*  characterInputs.MoveAxisForward = 0;
+              characterInputs.MoveAxisRight = 0;
+              characterInputs.CameraRotation = Quaternion.identity;
+              characterInputs.JumpDown = false;
+              characterInputs.CrouchDown = false;
+              characterInputs.CrouchUp = false;
+
+
+              movementVector = movementVector * 10;*/
+            //characterInputs.MoveVector
+
+            AICharacterInputs animationInput = new AICharacterInputs();
+            animationInput.MoveVector = movementVector;
+ 
+            animationInput.LookVector = this.transform.forward;
+
+            Debug.LogWarning("Rotation: " + this.transform.forward);
+            m_KinematicCharacterController.SetInputs(ref animationInput);
+           // m_KinematicCharacterController.UpdateVelocity(ref movementVector, Time.fixedDeltaTime);
+          //  m_KinematicCharacterController.SetInputs(ref characterInputs);
             m_Rigidbody.position = transform.position;
             m_Rigidbody.rotation = transform.rotation;
         }
@@ -303,9 +334,11 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                     }
 
                     m_KinematicCharacterController.MaxStableMoveSpeed = GetBaseMovementSpeed();
+                    m_KinematicCharacterController.StableMovementSharpness = GetBaseMovementSpeed();
+                    m_KinematicCharacterController.OrientationSharpness = GetBaseMovementSpeed();
+                    PlayerCharacterInputs characterInputs = new PlayerCharacterInputs();
 
-                     PlayerCharacterInputs characterInputs = new PlayerCharacterInputs();
-
+                    Debug.LogError("Regular movement state runs");
                      // Build the CharacterInputs struct
                      characterInputs.MoveAxisForward = m_MovementInput.z;
                      characterInputs.MoveAxisRight = m_MovementInput.x;
@@ -317,9 +350,6 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                      m_KinematicCharacterController.SetInputs(ref characterInputs);
                      m_Rigidbody.position = transform.position;
                      m_Rigidbody.rotation = transform.rotation;
-                    // m_CharacterController.Move(movementVector);
-                    // transform.rotation = Quaternion.LookRotation(movementVector);
-                    // After moving adjust the position of the dynamic rigidbody.
 
                     // If we didn't move stop moving.
                     if (movementVector == Vector3.zero)

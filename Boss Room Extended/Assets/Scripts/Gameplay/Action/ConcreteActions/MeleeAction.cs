@@ -47,7 +47,7 @@ namespace Unity.BossRoom.Gameplay.Actions
             // snap to face the right direction
             if (Data.Direction != Vector3.zero)
             {
-                serverCharacter.physicsWrapper.Transform.forward = Data.Direction;
+                //serverCharacter.physicsWrapper.Transform.forward = Data.Direction;
             }
 
             serverCharacter.serverAnimationHandler.NetworkAnimator.SetTrigger(Config.Anim);

@@ -1,0 +1,6 @@
+1.Create Character class SO and BaseHP INTVariable objects and set them up.
+2.Create Avatar Scriptable object from the menu. And name, setup it accordingally.
+3. In Startup scene, Add it to GameDataSource
+4. In CharSelect scene, Under CharacterSelectState GameObject, find NetworkCharSelection and add it to configuration.
+5. Find "AvatarRegistry" AvatarRegistry SciprtableObject and add your character avatar under it.
+

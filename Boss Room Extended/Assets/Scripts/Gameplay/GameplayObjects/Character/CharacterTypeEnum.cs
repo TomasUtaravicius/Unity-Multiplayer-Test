@@ -20,6 +20,9 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         VandalImp,
 
         //Character classes
-        Battlemaster
+        Battlemaster,
+        SpiritualInfiltrator,
+        RangerOfTheWilds,
+        ElementalAdept
     }
 }

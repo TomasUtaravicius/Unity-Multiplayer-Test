@@ -30,10 +30,14 @@ namespace Unity.BossRoom.Utils.Editor
                 // adding this preprocessor directive check since UnityTransport's simulator tools only inject latency in #UNITY_EDITOR or in #DEVELOPMENT_BUILD
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
                 var currentSimulationPreset = m_NetworkSimulator.CurrentPreset;
-                m_ArtificialLatencyEnabled = currentSimulationPreset.PacketDelayMs > 0 ||
+                if(currentSimulationPreset!=null)
+                {
+                    m_ArtificialLatencyEnabled = currentSimulationPreset.PacketDelayMs > 0 ||
                     currentSimulationPreset.PacketJitterMs > 0 ||
                     currentSimulationPreset.PacketLossInterval > 0 ||
                     currentSimulationPreset.PacketLossPercent > 0;
+                }
+                
 #else
                 m_ArtificialLatencyEnabled = false;
 #endif

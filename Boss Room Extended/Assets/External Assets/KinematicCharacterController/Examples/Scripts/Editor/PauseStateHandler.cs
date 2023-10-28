@@ -1,9 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using KinematicCharacterController;
 
+#if UNITY_EDITOR
 public class PauseStateHandler
 {
     [RuntimeInitializeOnLoadMethod()]
@@ -20,3 +23,4 @@ public class PauseStateHandler
         }
     }
 }
+#endif

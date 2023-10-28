@@ -47,6 +47,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         public KinematicCharacterMotor Motor;
         public Animator clientAnimator;
         public Rigidbody m_Rigidbody;
+        public bool isRootMotion = false;
         [Header("Stable Movement")]
         public float MaxStableMoveSpeed = 10f;
         public float StableMovementSharpness = 15f;
@@ -463,6 +464,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                 }
             }
         }
+   
 
         public void PostGroundingUpdate(float deltaTime)
         {

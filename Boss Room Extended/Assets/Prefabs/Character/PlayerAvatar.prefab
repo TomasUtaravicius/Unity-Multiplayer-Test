@@ -43,7 +43,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9073758047842524076}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2255221d850daf642981c1a4eedf85a1, type: 3}
+  m_Avatar: {fileID: 9000000, guid: ba5173a85368a4f4eb45fbc497be292c, type: 2}
   m_Controller: {fileID: 9100000, guid: 995b5a8014cf49345873dcb42fdc895d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -533,9 +533,6 @@ PrefabInstance:
       addedObject: {fileID: 6940323159316181846}
     - targetCorrespondingSourceObject: {fileID: 4600110157238723781, guid: 0d2d836e2e83b754fa1a1c4022d6d65d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7232939173259361562}
-    - targetCorrespondingSourceObject: {fileID: 4600110157238723781, guid: 0d2d836e2e83b754fa1a1c4022d6d65d, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 518446746556367818}
     - targetCorrespondingSourceObject: {fileID: 4600110157238723781, guid: 0d2d836e2e83b754fa1a1c4022d6d65d, type: 3}
       insertIndex: -1
@@ -691,19 +688,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GraphicsAnimator: {fileID: 1829276847453002016}
   m_NetworkAvatarGuidState: {fileID: 6438351454149486027}
---- !u!114 &7232939173259361562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6009713983291384756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119ee2e9b25694aa9b2f80b9a3d22c6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FeedbackPrefab: {fileID: 9137928905311479176, guid: 5d22c1d86e0e5604cbe14004bf924827, type: 3}
 --- !u!114 &518446746556367818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +746,7 @@ MonoBehaviour:
   Motor: {fileID: 518446746556367818}
   clientAnimator: {fileID: 1829276847453002016}
   m_Rigidbody: {fileID: 4785174920876936845}
+  isRootMotion: 0
   MaxStableMoveSpeed: 10
   StableMovementSharpness: 15
   OrientationSharpness: 10
