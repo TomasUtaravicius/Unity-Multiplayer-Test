@@ -63,6 +63,7 @@ namespace Unity.BossRoom.Gameplay.GameState
         }
 
 
+
         protected override void OnDestroy()
         {
             base.OnDestroy();
@@ -207,7 +208,7 @@ namespace Unity.BossRoom.Gameplay.GameState
         IEnumerator WaitToEndLobby()
         {
             yield return new WaitForSeconds(3);
-            SceneLoaderWrapper.Instance.LoadScene("BossRoom", useNetworkSceneManager: true);
+            SceneLoaderWrapper.Instance.LoadScene("StartingEnvironmentMultiplayer", useNetworkSceneManager: true);
         }
 
         public void OnNetworkDespawn()
