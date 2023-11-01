@@ -1,110 +1,11 @@
 fileFormatVersion: 2
-guid: 47616bd0cda748d4cbedcfc908506b9d
+guid: 876be45cd8772e44fb72adb2a0d780a4
 ModelImporter:
-  serializedVersion: 20200
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: drywall_panel
-  - first:
-      1: 100002
-    second: ground
-  - first:
-      1: 100004
-    second: OSB_Panel
-  - first:
-      1: 100006
-    second: stud_frame
-  - first:
-      1: 100008
-    second: stud_pile
-  - first:
-      1: 100010
-    second: //RootNode
-  - first:
-      4: 400000
-    second: drywall_panel
-  - first:
-      4: 400002
-    second: ground
-  - first:
-      4: 400004
-    second: OSB_Panel
-  - first:
-      4: 400006
-    second: stud_frame
-  - first:
-      4: 400008
-    second: stud_pile
-  - first:
-      4: 400010
-    second: //RootNode
-  - first:
-      21: 2100000
-    second: mat_wood_Plywood
-  - first:
-      21: 2100002
-    second: mat_concrete_cement
-  - first:
-      21: 2100004
-    second: nails
-  - first:
-      21: 2100006
-    second: drywall_painted
-  - first:
-      21: 2100008
-    second: drywall
-  - first:
-      21: 2100010
-    second: mat_wood_OSB
-  - first:
-      23: 2300000
-    second: drywall_panel
-  - first:
-      23: 2300002
-    second: ground
-  - first:
-      23: 2300004
-    second: OSB_Panel
-  - first:
-      23: 2300006
-    second: stud_frame
-  - first:
-      23: 2300008
-    second: stud_pile
-  - first:
-      33: 3300000
-    second: drywall_panel
-  - first:
-      33: 3300002
-    second: ground
-  - first:
-      33: 3300004
-    second: OSB_Panel
-  - first:
-      33: 3300006
-    second: stud_frame
-  - first:
-      33: 3300008
-    second: stud_pile
-  - first:
-      43: 4300000
-    second: stud_pile
-  - first:
-      43: 4300002
-    second: ground
-  - first:
-      43: 4300004
-    second: drywall_panel
-  - first:
-      43: 4300006
-    second: OSB_Panel
-  - first:
-      43: 4300008
-    second: stud_frame
+  serializedVersion: 22200
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
-    materialImportMode: 0
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -113,6 +14,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -138,11 +40,13 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
-    fileIdsGeneration: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -153,16 +57,18 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 0
+    secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -172,7 +78,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []
@@ -191,10 +97,12 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

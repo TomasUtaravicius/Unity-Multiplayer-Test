@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 4e847841c30024035acd0a7694862659
+guid: 37bd0fc40df62b746b1f3214585c16f8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 100
+  fontSize: 16
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
@@ -11,7 +11,7 @@ TrueTypeFontImporter:
   fontNames:
   - Oswald
   fallbackFontReferences:
-  - {fileID: 12800000, guid: b88ed8160d94d47ec8631c273a6df62f, type: 3}
+  - {fileID: 12800000, guid: b1c2e7737796365409a81a6f4df59c36, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

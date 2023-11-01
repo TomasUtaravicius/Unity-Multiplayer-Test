@@ -9,14 +9,18 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_VillageApple_Leaves
   m_Shader: {fileID: 4800000, guid: 418a5281d3f8eab4f99d89dfa09c84eb, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHATEST_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -68,12 +72,27 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AOIntensity: 1.027
+    - _AlphaClip: 0.5
+    - _AlphaCutoff: 0.5
     - _Bend: 4
     - _Culling: 0
     - _EmissiveIntensity: 0
+    - _EnvironmentReflections: 1
     - _Float1: 1
     - _Float2: 1
     - _FoliageEmissiveIntensity: 0
@@ -87,8 +106,12 @@ Material:
     - _MaskClipValue: 0.2
     - _NoiseSize: 0.02
     - _NormalIntensity: 1
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
     - _RoughnessIntensity: 1
     - _SSSSizw: 3.02
+    - _SpecularHighlights: 1
     - _TextureSize: 100
     - _TransAmbient: 1
     - _TransDirect: 1
@@ -123,6 +146,7 @@ Material:
     m_Colors:
     - _ColorTint: {r: 1, g: 1, b: 1, a: 0}
     - _Direction: {r: 1, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 0}
     - _FoliageColorBottom: {r: 0.52919436, g: 0.7075472, b: 0, a: 1}
     - _FoliageColorTop: {r: 0.6936812, g: 0.7529412, b: 0, a: 1}
