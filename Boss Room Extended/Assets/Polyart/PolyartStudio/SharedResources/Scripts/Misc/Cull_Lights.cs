@@ -23,6 +23,7 @@ public class Cull_Lights : MonoBehaviour
         
     }
 
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -45,5 +46,5 @@ public class Cull_Lights : MonoBehaviour
             lightSource.enabled = false;
         }
 
-    }
+    }*/
 }
