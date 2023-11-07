@@ -337,8 +337,6 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                     m_KinematicCharacterController.StableMovementSharpness = GetBaseMovementSpeed();
                     m_KinematicCharacterController.OrientationSharpness = GetBaseMovementSpeed();
                     PlayerCharacterInputs characterInputs = new PlayerCharacterInputs();
-
-                    Debug.LogError("Regular movement state runs");
                      // Build the CharacterInputs struct
                      characterInputs.MoveAxisForward = m_MovementInput.z;
                      characterInputs.MoveAxisRight = m_MovementInput.x;
